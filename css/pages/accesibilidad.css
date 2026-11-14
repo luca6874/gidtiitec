@@ -1,0 +1,448 @@
+/* =====================================
+   PÁGINA DE CONFIGURACIÓN DE ACCESIBILIDAD
+===================================== */
+
+.pagina-accesibilidad {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Migas de pan */
+.migas-pan {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
+
+.migas-pan a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.migas-pan .actual {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+/* Cabecera de la sección */
+.encabezado-config h1 {
+    font-size: 28px;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.encabezado-config p {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    max-width: 800px;
+}
+
+/* Tarjetas contenedor de configuración */
+.tarjeta-configuracion {
+    background-color: #ffffff;
+    border: 1px solid #d8dee4;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.tarjeta-config-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tarjeta-config-header h2 {
+    font-size: 18px;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.icono-seccion {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.tarjeta-descripcion {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    margin-top: -12px;
+    margin-bottom: 4px;
+}
+
+/* Grupos internos */
+.config-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.config-subtitulo {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+/* Botones de Escala de Lectura (100%, 125%, etc.) */
+.grupo-escalas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn-escala {
+    background-color: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-escala .porcentaje {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.btn-escala .etiqueta-escala {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.btn-escala.activo, .btn-escala:hover {
+    background-color: #EAF2FF;
+    border-color: var(--color-primary);
+}
+
+.btn-escala.activo .porcentaje,
+.btn-escala.activo .etiqueta-escala {
+    color: var(--color-primary);
+}
+
+/* =====================================
+   SECCIÓN 2: PERFILES CROMÁTICOS (2x2)
+===================================== */
+.grid-perfiles-cromaticos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.card-perfil {
+    background-color: #f8fafc;
+    border: 1.5px solid #d0d7de;
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.card-perfil:hover {
+    border-color: var(--color-primary);
+    background-color: #f1f5f9;
+}
+
+.card-perfil.activo {
+    background-color: #f0f4ff;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.perfil-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.badge-letra {
+    background-color: var(--color-primary);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.card-perfil div strong {
+    display: block;
+    font-size: 14px;
+    color: var(--color-text);
+    margin-bottom: 2px;
+}
+
+.card-perfil div span {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.icono-check {
+    color: var(--color-primary);
+    font-size: 16px;
+    font-weight: bold;
+    display: none;
+}
+
+.card-perfil.activo .icono-check {
+    display: inline-block;
+}
+
+/* =====================================
+   SWITCHES / TOGGLES Y CONFIGURACIÓN
+===================================== */
+.switch-grupo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 16px 20px;
+}
+
+.switch-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.switch-info p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #ccc;
+    transition: 0.3s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--color-primary);
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* =====================================
+   SECCIÓN 3: TABLA DE ATAJOS DE TECLADO
+===================================== */
+.tabla-atajos-contenedor {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.tabla-atajos {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13px;
+}
+
+.tabla-atajos th {
+    background-color: #f1f5f9;
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.tabla-atajos td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    color: var(--color-text);
+}
+
+.tabla-atajos tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla-atajos kbd {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-family: monospace;
+    font-weight: 600;
+    color: var(--color-primary);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.badge-estado {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* =====================================
+   BOTONES DE ACCIÓN FINALES
+===================================== */
+.acciones-formulario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    padding: 0 5px;
+}
+
+.btn-secundario {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: var(--color-text);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-secundario:hover {
+    background-color: #f1f5f9;
+}
+
+.btn-primario {
+    background-color: var(--color-primary);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primario:hover {
+    background-color: #001a4d;
+}
+
+/* =====================================
+   SELECTOR DE INTERLINEADO (TARJETA 1)
+===================================== */
+.select-personalizado-contenedor {
+    position: relative;
+    width: 100%;
+}
+
+.select-interlineado {
+    width: 100%;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text);
+    appearance: none; /* Oculta la flecha nativa del navegador */
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.select-interlineado:hover {
+    border-color: var(--color-primary);
+    background-color: #f1f5f9;
+}
+
+.select-interlineado:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 36, 107, 0.1);
+}
+
+/* Flecha personalizada a la derecha del select */
+.icono-flecha-select {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: var(--color-text-secondary);
+    pointer-events: none;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+@media (max-width: 768px) {
+    .grupo-escalas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid-perfiles-cromaticos {
+        grid-template-columns: 1fr;
+    }
+    .acciones-formulario {
+        flex-direction: column-reverse;
+        gap: 15px;
+    }
+    .btn-secundario, .btn-primario {
+        width: 100%;
+        text-align: center;
+    }
+}

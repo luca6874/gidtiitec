@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración y Asistencia de Accesibilidad - GIDTIITEC</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/accessibility.css">
+    <link rel="stylesheet" href="../../css/pages/accesibilidad.css">
+    
+</head>
+<body>
+
+    <header class="encabezado">
+        <div id="logos-header">
+            <img src="../../assets/images/logos/GIDTIITEC-logo.webp" alt="Logo de grupo de investigacion en desarrollo de tecnologias inclusivas ">
+            <img src="../../assets/images/logos/dasc-logo.png" alt="Logo del departamento académico de sistemas computacionales">
+        </div>
+        <nav class="navegacion-principal" aria-label="Navegación principal">
+            <a href="../../index.html">
+                <img src="../../assets/images/iconos/inicio-icono.png" alt="" class="icono-nav"> Inicio
+            </a>
+            <a href="#">
+                <img src="../../assets/images/iconos/ayuda-icono.png" alt="" class="icono-nav"> Ayuda
+            </a>
+            <a href="#">
+                <img src="../../assets/images/iconos/miembros-icono.png" alt="" class="icono-nav"> Miembros
+            </a>
+            <a href="../../pages/auth/login.html" class="btn-login">Iniciar Sesión</a>
+        </nav>
+    </header>
+   
+
+<main class="pagina-accesibilidad">
+        
+    <!-- Migas de pan (Breadcrumbs) -->
+   <nav class="migas-pan" aria-label="Ruta de navegación">
+        <a href="../../index.html">Inicio</a>
+        <span aria-hidden="true">&gt;</span>
+        <span aria-current="page">Accesibilidad</span>
+    </nav>
+
+    <!-- Cabecera de la sección -->
+    <header class="encabezado-config">
+        <h1>Configuración y Asistencia de Accesibilidad</h1>
+        <p>Personaliza la experiencia visual y de navegación del portal para garantizar un acceso universal e inclusivo. Todas las modificaciones se conservan en tu perfil institucional.</p>
+    </header>
+
+    <!-- Tarjeta de Configuración 1: Tamaño de Texto y Tipografía -->
+    <section class="tarjeta-configuracion">
+        <div class="tarjeta-config-header">
+            <img src="../../assets/images/iconos/texto-icono.png" alt="" class="icono-seccion">
+            <h2>1. Tamaño de Texto y Tipografía</h2>
+        </div>
+
+        <div class="config-grupo">
+            <span class="config-subtitulo">Escala de lectura global</span>
+            <div class="grupo-escalas" role="group" aria-label="Escala de lectura global">
+                <button type="button" class="btn-escala activo" aria-pressed="true">
+                    <span class="porcentaje">100%</span>
+                    <span class="etiqueta-escala">Estándar</span>
+                </button>
+                <button type="button" class="btn-escala" aria-pressed="false">
+                    <span class="porcentaje">125%</span>
+                    <span class="etiqueta-escala">Medio</span>
+                </button>
+                <button type="button" class="btn-escala" aria-pressed="false">
+                    <span class="porcentaje">150%</span>
+                    <span class="etiqueta-escala">Grande</span>
+                </button>
+                <button type="button" class="btn-escala" aria-pressed="false">
+                    <span class="porcentaje">175%</span>
+                    <span class="etiqueta-escala">Máximo</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="config-grupo switch-grupo">
+            <div class="switch-info">
+                <span class="config-subtitulo">Tipografía de máxima legibilidad</span>
+                <p>Activa pesos visuales reforzados para mitigar fatiga visual y dislexia.</p>
+            </div>
+            <label class="switch" aria-label="Activar tipografía de máxima legibilidad">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div class="config-grupo">
+            <label for="select-interlineado" class="config-subtitulo">Interlineado y respiración de párrafo</label>
+            <div class="select-personalizado-contenedor">
+                <select id="select-interlineado" class="select-interlineado">
+                    <option value="1.65" selected>Interlineado Holgado (1.65)</option>
+                    <option value="1.2">Interlineado Estándar (1.2)</option>
+                    <option value="2.0">Interlineado Amplio (2.0)</option>
+                </select>
+                <span class="icono-flecha-select">⌄</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tarjeta de Configuración 2: Contraste y Filtros Visuales -->
+        <section class="tarjeta-configuracion">
+            <div class="tarjeta-config-header">
+                <img src="../../assets/images/iconos/visualizacion-icono.png" alt="" class="icono-seccion">
+                <h2>2. Contraste y Filtros Visuales</h2>
+            </div>
+            <p class="tarjeta-descripcion">Garantiza umbrales ópticos de luminosidad para fotofobia o baja visión.</p>
+
+            <div class="config-grupo">
+                <span class="config-subtitulo">Perfil cromático de pantalla</span>
+                <div class="grid-perfiles-cromaticos" role="radiogroup" aria-label="Perfil cromático de pantalla">
+                    <button type="button" role="radio" aria-checked="true" class="card-perfil activo">
+                        <div class="perfil-info">
+                            <span class="badge-letra">Aa</span>
+                            <div>
+                                <strong>Estándar Institucional</strong>
+                                <span>Blanco puro, azul marino GIDTIITEC</span>
+                            </div>
+                        </div>
+                        <span class="icono-check">✓</span>
+                    </button>
+                    
+                    <button type="button" role="radio" aria-checked="false" class="card-perfil">
+                        <div class="perfil-info">
+                            <span class="badge-letra">Aa</span>
+                            <div>
+                                <strong>Alto Contraste Claro</strong>
+                                <span>Negro carbón sobre marfil de alto brillo</span>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button type="button" role="radio" aria-checked="false" class="card-perfil">
+                        <div class="perfil-info">
+                            <span class="badge-letra">Aa</span>
+                            <div>
+                                <strong>Alto Contraste Oscuro</strong>
+                                <span>Fondo azabache con acento amarillo ámbar</span>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button type="button" role="radio" aria-checked="false" class="card-perfil">
+                        <div class="perfil-info">
+                            <span class="badge-letra">Aa</span>
+                            <div>
+                                <strong>Monocromático</strong>
+                                <span>Escala de grises pura, sin distracciones</span>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Toggles de la sección 2 -->
+            <div class="config-grupo switch-grupo">
+                <div class="switch-info">
+                    <span class="config-subtitulo">Subrayar todos los enlaces y botones</span>
+                    <p>Enfatiza de inmediato todo destino navegable interactivo.</p>
+                </div>
+                <label class="switch" aria-label="Subrayar todos los enlaces y botones">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <div class="config-grupo switch-grupo">
+                <div class="switch-info">
+                    <span class="config-subtitulo">Reducir animaciones de pantalla</span>
+                    <p>Desactiva transiciones rápidas para prevenir mareos y sobreestimulación vestibular.</p>
+                </div>
+                <label class="switch" aria-label="Reducir animaciones de pantalla">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </section>
+
+        <!-- Tarjeta de Configuración 3: Navegación y Tecnologías Asistivas -->
+        <section class="tarjeta-configuracion">
+            <div class="tarjeta-config-header">
+                <img src="../../assets/images/iconos/teclado-icono.png" alt="" class="icono-seccion">
+                <h2>3. Navegación y Tecnologías Asistivas</h2>
+            </div>
+            <p class="tarjeta-descripcion">Optimización para lectores de pantalla y movilidad reducida.</p>
+
+            <div class="config-grupo switch-grupo">
+                <div class="switch-info">
+                    <span class="config-subtitulo">Foco de teclado visible de alto relieve</span>
+                    <p>Aplica un contorno de alto contraste (3px) para rastrear la tecla Tab.</p>
+                </div>
+                <label class="switch" aria-label="Foco de teclado visible de alto relieve">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <div class="config-grupo switch-grupo">
+                <div class="switch-info">
+                    <span class="config-subtitulo">Optimización para lectores de pantalla</span>
+                    <p>Soporte nativo semántico ARIA para NVDA, JAWS, VoiceOver y TalkBack.</p>
+                </div>
+                <label class="switch" aria-label="Optimización para lectores de pantalla">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <!-- Tabla de Atajos de Teclado -->
+            <div class="config-grupo">
+                <span class="config-subtitulo">Atajos de Teclado del Ecosistema GIDTIITEC</span>
+                <div class="tabla-atajos-contenedor">
+                    <table class="tabla-atajos">
+                        <thead>
+                            <tr>
+                                <th>Comando Teclado</th>
+                                <th>Acción Institucional</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><kbd>Alt + 1</kbd></td>
+                                <td>Ir al portal de inicio GIDTIITEC</td>
+                                <td><span class="badge-estado">Habilitado</span></td>
+                            </tr>
+                            <tr>
+                                <td><kbd>Alt + 2</kbd></td>
+                                <td>Saltar navegación e ir directo al contenido principal</td>
+                                <td><span class="badge-estado">Habilitado</span></td>
+                            </tr>
+                            <tr>
+                                <td><kbd>Alt + 3</kbd></td>
+                                <td>Foco en el buscador global de proyectos y miembros</td>
+                                <td><span class="badge-estado">Habilitado</span></td>
+                            </tr>
+                            <tr>
+                                <td><kbd>Alt + 4</kbd></td>
+                                <td>Abrir / cerrar panel flotante de asistencia rápida</td>
+                                <td><span class="badge-estado">Habilitado</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Botones de Acción Finales -->
+        <div class="acciones-formulario">
+            <button type="button" class="btn-secundario" id="restablecer-preferencias">
+                Restablecer a valores predeterminados
+            </button>
+            <button type="button" class="btn-primario" id="guardar-preferencias">
+                ✓ Guardar preferencias de accesibilidad
+            </button>
+        </div>
+
+    
+
+    </main>
+    <footer class="pie-pagina">
+        <div class="footer-barra-superior">
+
+            <nav  class="navegacion-footer" aria-label="Navegación del pie de página">
+                <a href="">Mapa web</a>
+                <a href="">Contacto</a>
+                <a href="">Politica de privacidad</a>
+                <a href="">¿Qué es GIDTIITEC?</a>
+            </nav>
+        </div>
+        <div class="footer-contenido-principal">
+
+            <div class="footer-identidad">
+                <img src="../../assets/images/logos/gidtiitec-logo2.png" alt="Logo de GIDTIITEC">
+                <p>
+                    © GIDTIITEC - 2026
+                </p>
+            </div>
+            <div class="footer-redes">
+                <p>
+                    Siguenos
+                </p>
+                <div id="redes">
+                    <a href="https://www.facebook.com/gidtiitec" aria-label="Visitar facebook de GIDTIITEC" target="_blank" rel="noopener noreferrer">
+                        <img src="../../assets/images/logos/facebook-logo.png" alt="Logo de facebook">
+                    </a>
+                    
+                    <a href="" aria-label="Visitar instagram de GIDTIITEC" target="_blank" rel="noopener noreferrer">
+                        <img src="../../assets/images/logos/instagram-logo.png" alt="Logo de instagram">
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
