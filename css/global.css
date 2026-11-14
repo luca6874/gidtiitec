@@ -1,0 +1,80 @@
+
+/* =================================
+   VARIABLES GLOBALES
+================================= */
+
+:root {
+    /* Colores institucionales */
+   --color-primary: #00246B; 
+    --color-secondary: #1644B1;
+    --color-accent: #F0B429;
+    
+    /*colores para los filtros */
+    --color-filtro-bg: #EAF2FF;    
+    --color-filtro-text: #00246B;
+
+    /* Colores generales */
+    --color-background: #FFFFFF;
+    --color-surface: #F4F6F8;
+    --color-text: #222222;
+    --color-text-secondary: #555555;
+
+    /* Tipografía */
+    --font-main: Arial, sans-serif;
+
+    /* Espaciado */
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 32px;
+}
+
+/* =================================
+   CONFIGURACIÓN GENERAL
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+/* Imágenes adaptables */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Enlaces */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Botones */
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}

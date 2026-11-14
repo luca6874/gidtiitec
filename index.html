@@ -3,20 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>GIDTIITEC</title>
 </head>
 <body>
-    <header>
-        <div id="logos">
-            <img src="assets/images/GIDTIITEC-logo.png" alt="Logo de grupo de investigacion en desarrollo de tecnologias inclusivas ">
-            <img src="assets/images/dasc-logo.png" alt="Logo del departamento académico de sistemas computacionales">
+    <header class="encabezado">
+        <div id="logos-header">
+            <img src="assets/images/logos/GIDTIITEC-logo.webp" alt="Logo de grupo de investigacion en desarrollo de tecnologias inclusivas ">
+            <img src="assets/images/logos/dasc-logo.png" alt="Logo del departamento académico de sistemas computacionales">
         </div>
-        <nav aria-label="Navegacion principal">
-            <a href="index.html">Inicio</a>
-            <a href="">Ayuda</a>
-            <a href="">Miembros</a>
-            <a href="pages/auth/login.html">Iniciar Sesión</a>
-        </nav>
+        <nav class="navegacion-principal" aria-label="Navegación principal">
+        <a href="index.html">
+            <img src="assets/images/iconos/inicio-icono.png" alt="" class="icono-nav"> Inicio
+        </a>
+        <a href="#">
+            <img src="assets/images/iconos/ayuda-icono.png" alt="" class="icono-nav"> Ayuda
+        </a>
+        <a href="#">
+            <img src="assets/images/iconos/miembros-icono.png" alt="" class="icono-nav"> Miembros
+        </a>
+        <a href="pages/auth/login.html" class="btn-login">Iniciar Sesión</a>
+    </nav>
     </header>
     <main>
         <nav aria-label="Ruta de Navegacion">
@@ -27,7 +37,7 @@
             </ol>
         </nav>
 
-        <header>
+        <header class="presentacion">
             <h1>
                 GIDTIITEC
             </h1>
@@ -36,68 +46,137 @@
             </h2>
         </header>
 
-        <section>
-            <div>
-                <img src="assets/images/Imagen-de-marcador.png" alt="imagen de estudiantes de fondo">
-                <p>
+        <section class="hero">
+            <img src="assets/images/fondos/Imagen-de-marcador.png" alt="Estudiantes trabajando en laboratorio de cómputo" class="hero-img">
+            <div class="hero-contenido">
+                <p class="badge-dasc">
                     DASC-UABCS
                 </p>
                 <h2>
                     Portal académico de tecnologias inclusivas
                 </h2>
-                <a href="#seccion-proyectos">
+                <a href="#seccion-proyectos" class="btn-hero">
                     Explorar Proyectos
                 </a>
             </div>
         </section>
 
         <section id="seccion-proyectos">
-            <h2>
-                Proyectos tecnológicos e inclusivos de la comunidad
-            </h2>
-            <h3>
-                Explora iniciativas, comparte ideas y participa.
-            </h3>
 
-            <form role="search">
-                <label for="buscar-proyecto">
+            <header class="encabezado-proyectos">
+                <h2>
+                    Proyectos tecnológicos e inclusivos de la comunidad
+                </h2>
+                <h3>
+                    Explora iniciativas, comparte ideas y participa.
+                </h3>
+            </header>
 
-                </label>
-                <input type="search" id="buscar-proyecto" name="busqueda" placeholder="Buscar por proyecto o tema">
-            </form>
+           <div class="contenedor-busqueda-filtros">
+                <!-- Barra de búsqueda con icono de lupa integrado -->
+                <form role="search" class="formulario-busqueda">
+                    <label for="buscar-proyecto" class="sr-only">Buscar proyecto:</label>
+                    <img src="assets/images/iconos/buscar-icono.png" alt="" class="icono-lupa">
+                    <input type="search" id="buscar-proyecto" name="busqueda" placeholder="Buscar por proyecto o tema">
+                </form>
 
-            <h3>
-                Proyectos destacados
-            </h3>
+                <!-- Botones de filtros con su respectiva flechita dentro -->
+                <div class="filtros" role="group" aria-label="Filtros de proyectos">
+                    <button type="button" class="btn-filtro">
+                        Categoría <img src="assets/images/iconos/despliegue-icono.svg" alt="" class="icono-flecha">
+                    </button>
+                    <button type="button" class="btn-filtro">
+                        Temática <img src="assets/images/iconos/despliegue-icono.svg" alt="" class="icono-flecha">
+                    </button>
+                    <button type="button" class="btn-filtro">
+                        Tecnología <img src="assets/images/iconos/despliegue-icono.svg" alt="" class="icono-flecha">
+                    </button>
+                    <button type="button" class="btn-filtro">
+                        Estado <img src="assets/images/iconos/despliegue-icono.svg" alt="" class="icono-flecha">
+                    </button>
+                </div>
+            </div>
         </section>
 
-    </main>
-    <footer>
-        <nav>
-            <a href="">Mapa web</a>
-            <a href="">Contacto</a>
-            <a href="">Politica de privacidad</a>
-            <a href="">¿Qué es GIDTIITEC?</a>
-        </nav>
-        <div>
-            <img src="assets/images/gidtiitec-logo2.png" alt="Logo de GIDTIITEC">
-            <p>
-                © GIDTIITEC - 2026
-            </p>
+        <section id="proyectos-destacados">
+            <div class="cabecera-seccion-proyectos">
+                <h2>Proyectos destacados</h2>
+                <span class="contador-proyectos">04 proyectos</span>
+            </div>
+
+            <ul class="lista-proyectos">
+                <li>
+                    <article class="tarjeta-proyecto">
+                        <img src="assets/images/fondos/imagen-proyecto.png" alt="Captura de pantalla de la plataforma de campus sin barreras">
+                        <div class="contenido-tarjeta">
+                            <div class="etiquetas">
+                                <span class="tag categoria">
+                                    Accesibilidad
+                                </span>
+                                <span class="tag estado en-desarrollo">
+                                    En desarrollo
+                                </span>
+                            </div>
+
+                            
+                            <h3>Campus sin barreras</h3>
+
+                           
+                            <p class="autor">
+                                Colectivo Acceso U
+                            </p>
+
+                            
+                            <p class="descripcion">
+                                Mapeo de rutas accesibles y servicios de apoyo en los espacios universitarios.
+                            </p>
+                        </div>
+                    </article>
+                </li>
+
+                
+            </ul>
+        </section>
+
+        <button type="button" class="boton-accesibilidad" aria-label="Abrir opciones de accesibilidad" aria-expanded="false" aria-controls="menu-accesibilidad">
+            <img src="assets/images/iconos/icono-accesibilidad.png" alt="">
+        </button>
+        <div id="menu-accesibilidad" hidden>
+
         </div>
-        <div>
-            <p>
-                Siguenos
-            </p>
-            <div id="redes">
-                <a href="https://www.facebook.com/gidtiitec" aria-label="Visitar facebook de GIDTIITEC" target="_blank">
-                    <img src="assets/images/facebook-logo.png" alt="Logo de facebook">
-                </a>
-                
-                <a href="" aria-label="Visitar instagram de GIDTIITEC" target="_blank">
-                    <img src="assets/images/instagram-logo.png" alt="Logo de instagram">
-                </a>
-                
+    </main>
+    <footer class="pie-pagina">
+        <div class="footer-barra-superior">
+
+            <nav  class="navegacion-footer" aria-label="Navegación del pie de página">
+                <a href="">Mapa web</a>
+                <a href="">Contacto</a>
+                <a href="">Politica de privacidad</a>
+                <a href="">¿Qué es GIDTIITEC?</a>
+            </nav>
+        </div>
+        <div class="footer-contenido-principal">
+
+            <div class="footer-identidad">
+                <img src="assets/images/logos/gidtiitec-logo2.png" alt="Logo de GIDTIITEC">
+                <p>
+                    © GIDTIITEC - 2026
+                </p>
+            </div>
+            <div class="footer-redes">
+                <p>
+                    Siguenos
+                </p>
+                <div id="redes">
+                    <a href="https://www.facebook.com/gidtiitec" aria-label="Visitar facebook de GIDTIITEC" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/images/logos/facebook-logo.png" alt="Logo de facebook">
+                    </a>
+                    
+                    <a href="" aria-label="Visitar instagram de GIDTIITEC" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/images/logos/instagram-logo.png" alt="Logo de instagram">
+                    </a>
+                    
+                </div>
             </div>
         </div>
     </footer>

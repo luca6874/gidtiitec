@@ -1,0 +1,409 @@
+/* =====================================
+   BREADCRUMBS Y PRESENTACIÓN
+===================================== */
+
+nav[aria-label="Ruta de Navegacion"] {
+    padding: 18px 5% 6px 5%;
+}
+
+.breadcrumbs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.presentacion {
+    padding: 8px 5% 24px 5%;
+}
+
+.presentacion h1 {
+    margin: 0 0 6px 0;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.presentacion h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+}
+
+/* =====================================
+   HERO BANNER
+===================================== */
+
+.hero {
+    position: relative;
+    width: 90%;
+    height: 360px;
+    margin: 0 auto 40px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 48px;
+}
+
+.hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Degradado oscuro izquierdo para que resalte el texto blanco */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0, 36, 107, 0.88) 0%, rgba(0, 36, 107, 0.45) 65%, rgba(0, 36, 107, 0.15) 100%);
+    z-index: 1;
+}
+
+.hero-contenido {
+    position: relative;
+    z-index: 2;
+    max-width: 460px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    color: #ffffff;
+}
+
+.badge-dasc {
+    margin: 0;
+    padding: 5px 14px;
+    background-color: var(--color-primary);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.hero-contenido h2 {
+    margin: 0;
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.btn-hero {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 10px 20px;
+    background-color: #245CB5;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-hero:hover {
+    background-color: #2f6ed1;
+    transform: translateY(-2px);
+}
+
+/* =====================================
+   SECCIÓN PROYECTOS Y BUSCADOR
+===================================== */
+
+#seccion-proyectos {
+    padding: 0 5%;
+}
+
+.encabezado-proyectos h2 {
+    margin: 0 0 6px 0;
+    font-size: 22px;
+    color: var(--color-text);
+}
+
+.encabezado-proyectos h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+}
+
+/* Oculta visualmente el label manteniendo accesibilidad */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* =====================================
+   BOTÓN FLOTANTE DE ACCESIBILIDAD
+===================================== */
+
+.boton-accesibilidad {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.boton-accesibilidad:hover {
+    transform: scale(1.08);
+    background-color: #245CB5;
+}
+
+.boton-accesibilidad img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+
+
+
+
+
+/* =====================================
+   BUSCADOR Y FILTROS
+===================================== */
+
+.contenedor-busqueda-filtros {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+/* Formulario de búsqueda con icono de lupa */
+.formulario-busqueda {
+    position: relative;
+    flex: 1;
+    min-width: 300px;
+}
+
+.icono-lupa {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.formulario-busqueda input[type="search"] {
+    width: 100%;
+    padding: 12px 16px 12px 46px; /* Espacio a la izquierda para la lupa */
+    background-color: #ffffff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--color-text);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.formulario-busqueda input[type="search"]::placeholder {
+    color: #8c959f;
+}
+
+.formulario-busqueda input[type="search"]:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 36, 107, 0.1);
+}
+
+/* Contenedor de botones de filtro */
+.filtros {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Estilo de cada botón de filtro */
+.btn-filtro {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background-color:var(--color-filtro-bg);
+    border: 1px solid #d0d7de;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-filtro-text);
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-filtro:hover {
+    background-color:#d8e7ff;
+    border-color: var(--color-primary);
+}
+
+/* Icono de flecha desplegable dentro del botón */
+.icono-flecha {
+    width: 12px;
+    height: 12px;
+    object-fit: contain;
+    opacity: 0.7;
+    color: var(--color-filtro-text);
+}
+
+/* Clase utilitaria para ocultar texto a vista pero accesible a lectores */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* =====================================
+   TARJETAS DE PROYECTOS DESTACADOS
+===================================== */
+
+#proyectos-destacados {
+    margin: 40px 5%;
+}
+
+.cabecera-seccion-proyectos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cabecera-seccion-proyectos h2 {
+    margin: 0;
+    font-size: 22px;
+    color: var(--color-text);
+}
+
+.contador-proyectos {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.lista-proyectos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.tarjeta-proyecto {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.tarjeta-proyecto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta-proyecto img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.contenido-tarjeta {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-grow: 1;
+}
+
+.etiquetas {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 2px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.tag.categoria {
+    background-color: #e6f0fa;
+    color: var(--color-primary);
+}
+
+/* Estado En desarrollo (Azul claro) */
+.tag.estado.en-desarrollo {
+    background-color: #EAF2FF;
+    color: #00246B;
+}
+
+/* Estado Terminado (Verde claro institucional) */
+.tag.estado.terminado {
+    background-color: #E2F4E8;
+    color: #137333;
+}
+
+.tarjeta-proyecto h3 {
+    margin: 4px 0 0 0;
+    font-size: 17px;
+    color: var(--color-text);
+    font-weight: 700;
+}
+
+.tarjeta-proyecto .autor {
+    margin: 0;
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.tarjeta-proyecto .descripcion {
+    margin: 4px 0 0 0;
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+}

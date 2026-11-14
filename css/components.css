@@ -1,0 +1,231 @@
+
+/* =====================================
+   HEADER - TAMAÑOS Y ESPACIADOS EXACTOS
+===================================== */
+
+.encabezado {
+    width: 100%;
+    min-height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 5%;
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* Contenedor de los logos */
+#logos-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Medida exacta para el logo de GIDTIITEC */
+#logos-header img:nth-child(1) {
+    height: 75px;
+    width: 89px;
+    object-fit: contain;
+}
+
+/* Medida exacta para el logo del DASC */
+#logos-header img:nth-child(2) {
+    height: 88px;
+    width: 144px;
+    object-fit: contain;
+}
+
+/* Navegación principal con mayor espaciado a la derecha */
+.navegacion-principal {
+    display: flex;
+    align-items: center;
+    gap: 36px; /* Aumentado para dar la separación de Figma */
+}
+
+.navegacion-principal a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.navegacion-principal a:hover {
+    opacity: 0.8;
+}
+
+/* Botón de Iniciar Sesión */
+.navegacion-principal .btn-login {
+    background-color: #245CB5;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 9px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.navegacion-principal .btn-login:hover {
+    background-color: #2f6ed1;
+    opacity: 1;
+}
+
+/* Foco accesible */
+.navegacion-principal a:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* =====================================
+   FOOTER - PIE DE PÁGINA 
+===================================== */
+
+.pie-pagina {
+    width: 100%;
+    background-color: var(--color-secondary); /* Color base general */
+    color: white;
+}
+
+/* Franja superior con un azul más oscuro y los enlaces a la izquierda */
+.footer-barra-superior {
+    width: 100%;
+    background-color:#00246B; /* Un tono de azul más oscuro para esa barra exacta */
+    padding: 16px 5%;
+}
+
+.navegacion-footer {
+    display: flex;
+    justify-content: flex-start; /* Alineados a la izquierda como en Figma */
+    flex-wrap: wrap;
+    gap: 45px;
+}
+
+.navegacion-footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.navegacion-footer a:hover {
+    color: var(--color-accent);
+}
+
+/* Contenido principal inferior (Logo izq, Redes der) */
+.footer-contenido-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+}
+
+/* Identidad institucional (Izquierda) */
+.footer-identidad {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.footer-identidad img {
+    width: 59px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.footer-identidad p {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+/* Redes sociales (Derecha) */
+.footer-redes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.footer-redes p {
+    margin: 0 0 4px 0;
+    font-size: 22px; /* Aumentado notablemente para que coincida con Figma */
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+#redes {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 4px;
+}
+#redes img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+#redes a:hover img {
+    transform: scale(1.15);
+}
+
+/* Accesibilidad de foco */
+.pie-pagina a:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 4px;
+}
+
+
+
+/* =====================================
+   RESPONSIVE - HEADER Y FOOTER
+===================================== */
+
+@media (max-width: 768px) {
+
+    /* Header */
+
+    .encabezado {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    #logos-header img {
+        height: 55px;
+    }
+
+    .navegacion-principal {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Footer */
+
+   .navegacion-footer {
+        justify-content: center;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-contenido-principal {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .footer-identidad,
+    .footer-redes {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+}
