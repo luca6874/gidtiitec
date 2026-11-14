@@ -192,8 +192,117 @@
         <button type="button" class="boton-accesibilidad" aria-label="Abrir opciones de accesibilidad" aria-expanded="false" aria-controls="menu-accesibilidad">
             <img src="assets/images/iconos/icono-accesibilidad.png" alt="">
         </button>
-        <div id="menu-accesibilidad" hidden>
+        <div id="menu-accesibilidad" class="modal-accesibilidad-overlay" hidden>
+            <div class="modal-accesibilidad" role="dialog" aria-modal="true" aria-labelledby="titulo-accesibilidad">
+                
+                <!-- Cabecera del Modal -->
+                <header class="modal-header">
+                    <div class="modal-header-info">
+                        <img src="assets/images/iconos/icono-accesibilidad.png" alt="" class="modal-icono">
+                        <div>
+                            <h2 id="titulo-accesibilidad">Accesibilidad</h2>
+                            <p>Ajustes visuales y de lectura para el portal universitario</p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-cerrar-modal" aria-label="Cerrar opciones de accesibilidad">
+                        ✕
+                    </button>
+                </header>
 
+                <!-- Cuerpo del Modal -->
+                <div class="modal-body">
+                        
+                    <!-- 1. Tamaño del texto -->
+                    <section class="accesibilidad-grupo">
+                        <div class="grupo-encabezado">
+                            <img src="assets/images/iconos/tamtexto-icono.png" alt="" class="icono-seccion">
+                            <h3 class="grupo-titulo">
+                                Tamaño del texto
+                            </h3>
+                            <span class="badge-predeterminado">
+                                100% (Predeterminado)
+                            </span>
+                        </div>
+                        <div class="botones-tamano" role="group" aria-label="Tamaño del texto">
+                            <button type="button" class="btn-tamano" data-tamano="pequeno">
+                                A -
+                            </button>
+                            <button  type="button" class="btn-tamano activo" data-tamano="normal" aria-pressed="true">
+                                A •
+                            </button>
+                            <button type="button" class="btn-tamano" data-tamano="grande">
+                                A +
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- 2. Modo de visualización -->
+                    <section class="accesibilidad-grupo">
+                        <div class="grupo-encabezado">
+                            <img src="assets/images/iconos/tema-icono.png" alt="" class="icono-seccion">
+                            <h3 class="grupo-titulo">
+                                Modo de visualización
+                            </h3>
+                        </div>
+                        
+                        <div class="grid-modos" role="radiogroup" aria-label="Modo de visualización">
+                            <button type="button" role="radio" data-tema="estandar" aria-checked="true" class="modo-card activo">
+                                <span class="radio-circulo"></span>
+                                <span class="modo-texto">
+                                    Estándar
+                                </span>
+                            </button>
+                            <button type="button" role="radio" data-tema="estandar" aria-checked="true" class="modo-card activo">
+                                <span class="radio-circulo"></span>
+                                <span class="modo-texto">
+                                    Contraste claro
+                                </span>
+                            </button>
+                            <button type="button" role="radio" data-tema="estandar" aria-checked="true" class="modo-card activo">
+                                <span class="radio-circulo"></span>
+                                <span class="modo-texto">
+                                    Contraste oscuro
+                                </span>
+                            </button>
+                            <button type="button" role="radio" data-tema="estandar" aria-checked="true" class="modo-card activo">
+                                <span class="radio-circulo"></span>
+                                <span class="modo-texto">
+                                    Monocromático
+                                </span>
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- 3. Opciones de lectura / enlaces -->
+                    <div class="accesibilidad-opciones">
+                        <label class="opcion-checkbox">
+                            <div class="opcion-info">
+                                <img src="assets/images/iconos/icono-subrayar.png" alt="" class="icono-seccion">
+                                <span>Subrayar todos los enlaces</span>
+                            </div>
+                            <input type="checkbox">
+                        </label>
+                        
+                        <label class="opcion-checkbox">
+                            <div class="opcion-info">
+                                <img src="assets/images/iconos/icono-libro.png" alt="" class="icono-seccion">
+                                <span>Tipografía para lectura fácil</span>
+                            </div>
+                            <input type="checkbox">
+                        </label>
+                    </div>
+
+                    <!-- 4. Enlace a Más opciones -->
+                    <a href="#" class="enlace-mas-opciones">
+                        <div class="mas-opciones-texto">
+                            <strong>Más opciones de accesibilidad</strong>
+                            <span>Configura todas las opciones disponibles del sistema</span>
+                        </div>
+                        <span class="flecha">›</span>
+                    </a>
+
+                </div>
+            </div>    
         </div>
     </main>
     <footer class="pie-pagina">
@@ -231,5 +340,6 @@
             </div>
         </div>
     </footer>
+    <script src="js/accessibility.js" defer></script>
 </body>
 </html>
