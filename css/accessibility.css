@@ -439,7 +439,10 @@ html[data-tipografia-legible="true"] body {
 html[data-tipografia-legible="true"] button,
 html[data-tipografia-legible="true"] input,
 html[data-tipografia-legible="true"] select,
-html[data-tipografia-legible="true"] textarea {
+html[data-tipografia-legible="true"] textarea,
+html[data-tipografia-legible="true"] h1,
+html[data-tipografia-legible="true"] h2,
+html[data-tipografia-legible="true"] h3 {
     font-family: Arial, Verdana, sans-serif;
 }
 
