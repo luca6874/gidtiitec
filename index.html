@@ -28,7 +28,7 @@
         <a href="pages/auth/login.html" class="btn-login">Iniciar Sesión</a>
     </nav>
     </header>
-    <main>
+    <main id="contenido-principal" tabindex="-1">
         <nav aria-label="Ruta de Navegacion">
             <ol class="breadcrumbs">
                 <li aria-current="page">
@@ -193,7 +193,7 @@
             <img src="assets/images/iconos/icono-accesibilidad.png" alt="">
         </button>
         <div id="menu-accesibilidad" class="modal-accesibilidad-overlay" hidden>
-            <div class="modal-accesibilidad" role="dialog" aria-modal="true" aria-labelledby="titulo-accesibilidad">
+            <div class="modal-accesibilidad" role="dialog" aria-modal="true" aria-labelledby="titulo-accesibilidad"  tabindex="-1">
                 
                 <!-- Cabecera del Modal -->
                 <header class="modal-header">
@@ -224,13 +224,13 @@
                             </span>
                         </div>
                         <div class="botones-tamano" role="group" aria-label="Tamaño del texto">
-                            <button type="button" class="btn-tamano" data-tamano="pequeno">
+                            <button type="button" class="btn-tamano" data-escala="0.9" aria-pressed="false">
                                 A -
                             </button>
-                            <button  type="button" class="btn-tamano activo" data-tamano="normal" aria-pressed="true">
+                            <button type="button" class="btn-tamano activo" data-escala="1" aria-pressed="true">
                                 A •
                             </button>
-                            <button type="button" class="btn-tamano" data-tamano="grande">
+                            <button type="button" class="btn-tamano" data-escala="1.25" aria-pressed="false">
                                 A +
                             </button>
                         </div>
@@ -252,19 +252,19 @@
                                     Estándar
                                 </span>
                             </button>
-                            <button type="button" role="radio" data-tema="estandar" aria-checked="true" class="modo-card activo">
+                            <button type="button" role="radio" data-tema="contraste-claro" aria-checked="false" class="modo-card">
                                 <span class="radio-circulo"></span>
                                 <span class="modo-texto">
                                     Contraste claro
                                 </span>
                             </button>
-                            <button type="button" role="radio" data-tema="estandar" aria-checked="true" class="modo-card activo">
+                            <button type="button" role="radio" data-tema="contraste-oscuro" aria-checked="false" class="modo-card">
                                 <span class="radio-circulo"></span>
                                 <span class="modo-texto">
                                     Contraste oscuro
                                 </span>
                             </button>
-                            <button type="button" role="radio" data-tema="estandar" aria-checked="true" class="modo-card activo">
+                            <button type="button" role="radio" data-tema="monocromatico" aria-checked="false" class="modo-card">
                                 <span class="radio-circulo"></span>
                                 <span class="modo-texto">
                                     Monocromático
@@ -280,7 +280,7 @@
                                 <img src="assets/images/iconos/icono-subrayar.png" alt="" class="icono-seccion">
                                 <span>Subrayar todos los enlaces</span>
                             </div>
-                            <input type="checkbox">
+                            <input type="checkbox" data-preferencia="subrayar-enlaces">
                         </label>
                         
                         <label class="opcion-checkbox">
@@ -288,7 +288,7 @@
                                 <img src="assets/images/iconos/icono-libro.png" alt="" class="icono-seccion">
                                 <span>Tipografía para lectura fácil</span>
                             </div>
-                            <input type="checkbox">
+                            <input type="checkbox" data-preferencia="tipografia-legible">
                         </label>
                     </div>
 

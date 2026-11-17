@@ -22,13 +22,26 @@
 }
 
 .modal-accesibilidad {
-    background-color: #ffffff;
+    background-color: var(--color-surface);
+    color: var(--color-text);
     width: 100%;
     max-width: 520px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     animation: fadeInModal 0.2s ease;
+}
+
+.modal-body {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+}
+
+.grupo-titulo,
+.modo-texto,
+.opcion-checkbox,
+.mas-opciones-texto strong {
+    color: var(--color-text);
 }
 
 @keyframes fadeInModal {
@@ -61,13 +74,13 @@
 
 .modal-header h2 {
     margin: 0;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 700;
 }
 
 .modal-header p {
     margin: 3px 0 0 0;
-    font-size: 12px;
+    font-size: 0.75rem;
     opacity: 0.85;
 }
 
@@ -75,7 +88,7 @@
     background: transparent;
     border: none;
     color: white;
-    font-size: 18px;
+    font-size: 1.125rem;
     cursor: pointer;
     opacity: 0.8;
     transition: opacity 0.2s;
@@ -106,13 +119,13 @@
 }
 
 .grupo-titulo {
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 600;
     color: var(--color-text);
 }
 
 .badge-predeterminado {
-    font-size: 11px;
+    font-size: 0.6875rem;
     color: var(--color-text-secondary);
     background-color: #f1f3f5;
     padding: 2px 8px;
@@ -131,7 +144,7 @@
     border: 1px solid #d0d7de;
     padding: 10px;
     border-radius: 6px;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 600;
     color: var(--color-text);
     cursor: pointer;
@@ -184,7 +197,7 @@
 }
 
 .modo-texto {
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 500;
     color: var(--color-text);
 }
@@ -203,7 +216,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 500;
     color: var(--color-text);
     cursor: pointer;
@@ -241,17 +254,17 @@
 }
 
 .mas-opciones-texto strong {
-    font-size: 13px;
+    font-size: 0.8125rem;
     color: var(--color-text);
 }
 
 .mas-opciones-texto span {
-    font-size: 11px;
+    font-size: 0.6875rem;
     color: var(--color-text-secondary);
 }
 
 .flecha {
-    font-size: 18px;
+    font-size: 1.125rem;
     color: var(--color-text-secondary);
 }
 
@@ -267,7 +280,7 @@
     background: transparent;
     border: none;
     color: var(--color-text-secondary);
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 500;
     cursor: pointer;
     text-decoration: underline;
@@ -275,6 +288,114 @@
 
 .btn-restablecer:hover {
     color: var(--color-primary);
+}
+
+/* Conserva el contraste en los controles del modal con tema oscuro. */
+html[data-modo-visual="contraste-oscuro"] .modal-accesibilidad,
+html[data-modo-visual="contraste-oscuro"] .modal-body,
+html[data-modo-visual="contraste-oscuro"] .btn-tamano,
+html[data-modo-visual="contraste-oscuro"] .modo-card,
+html[data-modo-visual="contraste-oscuro"] .enlace-mas-opciones {
+    background-color: #171717;
+    color: #ffffff;
+    border-color: #777777;
+}
+
+html[data-modo-visual="contraste-oscuro"] .modo-card.activo,
+html[data-modo-visual="contraste-oscuro"] .btn-tamano.activo,
+html[data-modo-visual="contraste-oscuro"] .btn-tamano:hover,
+html[data-modo-visual="contraste-oscuro"] .modo-card:hover,
+html[data-modo-visual="contraste-oscuro"] .enlace-mas-opciones:hover {
+    background-color: #252525;
+    border-color: #ffd700;
+}
+
+html[data-modo-visual="contraste-oscuro"] .badge-predeterminado,
+html[data-modo-visual="contraste-oscuro"] .modal-footer {
+    background-color: #111111;
+    color: #ffffff;
+    border-color: #777777;
+}
+
+
+/* =====================================
+   MODOS DE VISUALIZACIÓN
+===================================== */
+
+/* Estándar institucional */
+html[data-modo-visual="estandar"] {
+    --color-background: #FFFFFF;
+    --color-surface: #F4F6F8;
+    --color-text: #222222;
+    --color-text-secondary: #555555;
+    --color-primary: #00246B;
+    --color-secondary: #1644B1;
+    --color-accent: #F0B429;
+}
+
+/* Alto contraste claro */
+html[data-modo-visual="contraste-claro"] {
+    --color-background: #FFFFFF;
+    --color-surface: #FFFFFF;
+    --color-text: #000000;
+    --color-text-secondary: #222222;
+    --color-primary: #000000;
+    --color-secondary: #000000;
+    --color-accent: #0033CC;
+}
+
+/* Alto contraste oscuro */
+html[data-modo-visual="contraste-oscuro"] {
+    --color-background: #000000;
+    --color-surface: #171717;
+    --color-text: #FFFFFF;
+    --color-text-secondary: #EEEEEE;
+    --color-primary: #FFD700;
+    --color-secondary: #FFFFFF;
+    --color-accent: #FFD700;
+}
+
+/* Monocromático */
+html[data-modo-visual="monocromatico"] {
+    filter: grayscale(100%);
+}
+
+/* =====================================
+   PREFERENCIAS DE TEXTO
+===================================== */
+
+/* Tipografía de lectura fácil */
+html[data-tipografia-legible="true"] body {
+    font-family: Arial, Verdana, sans-serif;
+}
+
+html[data-tipografia-legible="true"] button,
+html[data-tipografia-legible="true"] input,
+html[data-tipografia-legible="true"] select,
+html[data-tipografia-legible="true"] textarea {
+    font-family: Arial, Verdana, sans-serif;
+}
+
+/* Subrayar enlaces */
+html[data-subrayar-enlaces="true"] a,
+html[data-subrayar-enlaces="true"] button {
+    text-decoration: underline !important;
+}
+
+/* Reducir animaciones */
+html[data-reducir-animaciones="true"] *,
+html[data-reducir-animaciones="true"] *::before,
+html[data-reducir-animaciones="true"] *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+}
+
+/* Foco visible */
+html[data-foco-visible="true"] :focus-visible {
+    outline: 3px solid #ffbf00 !important;
+    outline-offset: 3px;
 }
 
 @media (max-width: 600px) {

@@ -1,150 +1,486 @@
 
-/* =====================================
-   ELEMENTOS DEL DOM
-===================================== */
 
-// Botón flotante
-const botonAccesibilidad = document.querySelector(
-    ".boton-accesibilidad"
-);
+/* ==========================================
+   SISTEMA GLOBAL DE ACCESIBILIDAD GIDTIITEC
+   ========================================== */
 
-// Fondo que cubre la pantalla
-const menuAccesibilidad = document.querySelector(
-    "#menu-accesibilidad"
-);
+(() => {
 
-// Contenido del modal
-const modalAccesibilidad = document.querySelector(
-    ".modal-accesibilidad"
-);
+    /* 1. CONFIGURACIÓN INICIAL */
 
-// Botón para cerrar
-const botonCerrar = document.querySelector(
-    ".btn-cerrar-modal"
-);
+    const CLAVE_ALMACENAMIENTO = "gidtiitec-accesibilidad";
 
+    const valoresPredeterminados = {
+        escala: 1,
+        tema: "estandar",
+        "tipografia-legible": false,
+        interlineado: "1.65",
+        "subrayar-enlaces": true,
+        "reducir-animaciones": true,
+        "foco-visible": true
+    };
 
-/* =====================================
-   ABRIR MODAL
-===================================== */
+    const temasPermitidos = [
+        "estandar",
+        "contraste-claro",
+        "contraste-oscuro",
+        "monocromatico"
+    ];
 
-function abrirModal() {
+    let preferencias = cargarPreferencias();
 
-    // Mostramos el modal
-    menuAccesibilidad.hidden = false;
-
-    // Indicamos que el botón está expandido
-    botonAccesibilidad.setAttribute(
-        "aria-expanded",
-        "true"
-    );
-
-    // Llevamos el foco al botón de cerrar
-    botonCerrar.focus();
-}
+    const documento = document.documentElement;
 
 
-/* =====================================
-   CERRAR MODAL
-===================================== */
+    /* 2. CARGAR PREFERENCIAS GUARDADAS */
 
-function cerrarModal() {
+    function cargarPreferencias() {
 
-    // Ocultamos el modal
-    menuAccesibilidad.hidden = true;
+        try {
+            const guardadas = localStorage.getItem(CLAVE_ALMACENAMIENTO);
 
-    // Indicamos que el botón ya no está expandido
-    botonAccesibilidad.setAttribute(
-        "aria-expanded",
-        "false"
-    );
+            if (guardadas) {
+                const datos = JSON.parse(guardadas);
 
-    // Devolvemos el foco al botón flotante
-    botonAccesibilidad.focus();
-}
+                return {
+                    ...valoresPredeterminados,
+                    ...datos,
+                    escala: [0.9, 1, 1.1, 1.25, 1.5, 1.75].includes(datos.escala)
+                        ? datos.escala
+                        : 1,
+                    tema: temasPermitidos.includes(datos.tema)
+                        ? datos.tema
+                        : "estandar"
+                };
+            }
 
+        } catch (error) {
+            console.warn("No se pudieron cargar las preferencias:", error);
+        }
 
-/* =====================================
-   EVENTOS DEL BOTÓN
-===================================== */
-
-// Abrir
-botonAccesibilidad.addEventListener(
-    "click",
-    abrirModal
-);
-
-// Cerrar
-botonCerrar.addEventListener(
-    "click",
-    cerrarModal
-);
+        return { ...valoresPredeterminados };
+    }
 
 
-/* =====================================
-   CERRAR CON ESCAPE
-===================================== */
+    /* 3. GUARDAR PREFERENCIAS */
 
-document.addEventListener("keydown", function(event) {
+    function guardarPreferencias() {
+
+        try {
+            localStorage.setItem(
+                CLAVE_ALMACENAMIENTO,
+                JSON.stringify(preferencias)
+            );
+
+            return true;
+
+        } catch (error) {
+            console.error("No se pudieron guardar las preferencias:", error);
+            return false;
+        }
+    }
+
+
+    /* 4. APLICAR PREFERENCIAS A TODA LA PÁGINA */
+
+    function aplicarPreferencias() {
+
+        // Escala de texto
+        documento.style.fontSize = `${preferencias.escala * 100}%`;
+
+        // Interlineado
+        documento.style.setProperty("--interlineado", preferencias.interlineado);
+
+        // Tema visual
+        documento.dataset.modoVisual = preferencias.tema;
+
+        // Preferencias visuales
+        documento.dataset.tipografiaLegible =
+            preferencias["tipografia-legible"];
+
+        documento.dataset.subrayarEnlaces =
+            preferencias["subrayar-enlaces"];
+
+        documento.dataset.reducirAnimaciones =
+            preferencias["reducir-animaciones"];
+
+        documento.dataset.focoVisible =
+            preferencias["foco-visible"];
+
+
+        actualizarControles();
+    }
+
+
+    /* 5. ACTUALIZAR LOS CONTROLES DEL HTML */
+
+    function actualizarControles() {
+
+        // Botones de escala de texto
+        document.querySelectorAll("[data-escala]").forEach(boton => {
+
+            const escala = Number(boton.dataset.escala);
+            const seleccionado = escala === preferencias.escala;
+
+            boton.classList.toggle("activo", seleccionado);
+            boton.setAttribute("aria-pressed", String(seleccionado));
+        });
+
+        // Perfiles cromáticos
+        document.querySelectorAll("[data-tema]").forEach(boton => {
+
+            const seleccionado =
+                boton.dataset.tema === preferencias.tema;
+
+            boton.classList.toggle("activo", seleccionado);
+            boton.setAttribute("aria-checked", String(seleccionado));
+            boton.tabIndex = seleccionado ? 0 : -1;
+        });
+
+        // Interruptores
+        document.querySelectorAll("[data-preferencia]").forEach(input => {
+
+            const nombre = input.dataset.preferencia;
+
+            if (input.type === "checkbox" && Object.hasOwn(preferencias, nombre)) {
+                input.checked = preferencias[nombre];
+            }
+        });
+
+        // Actualizar selector de interlineado
+        const selectorInterlineado = document.querySelector(
+            "#select-interlineado"
+        );
+
+        if (selectorInterlineado) {
+            selectorInterlineado.value = preferencias.interlineado;
+        }
+
+    }
+
+
+    /* 6. CAMBIAR LA ESCALA DEL TEXTO */
+
+    document.querySelectorAll("[data-escala]").forEach(boton => {
+
+        boton.addEventListener("click", () => {
+
+            const nuevaEscala = Number(boton.dataset.escala);
+
+            if (![0.9, 1, 1.1, 1.25, 1.5, 1.75].includes(nuevaEscala)) {
+                return;
+            }
+
+            preferencias.escala = nuevaEscala;
+
+            aplicarPreferencias();
+            guardarPreferencias();
+        });
+
+
+    });
+
+    const selectorInterlineado = document.querySelector("#select-interlineado");
+    if (selectorInterlineado) {
+        selectorInterlineado.addEventListener("change", () => {
+            preferencias.interlineado = selectorInterlineado.value;
+            aplicarPreferencias();
+            guardarPreferencias();
+        });
+    }
+
+
+    /* 7. CAMBIAR EL TEMA VISUAL */
+
+    function cambiarTema(nuevoTema) {
+
+        if (!temasPermitidos.includes(nuevoTema)) {
+            return;
+        }
+
+        preferencias.tema = nuevoTema;
+
+        aplicarPreferencias();
+        guardarPreferencias();
+    }
+
+    document.querySelectorAll("[data-tema]").forEach(boton => {
+
+        boton.addEventListener("click", () => {
+            cambiarTema(boton.dataset.tema);
+        });
+
+    });
+
+
+    /* 8. CAMBIAR LOS INTERRUPTORES */
+
+    document.querySelectorAll("[data-preferencia]").forEach(input => {
+
+        input.addEventListener("change", () => {
+
+            const nombre = input.dataset.preferencia;
+
+            if (input.type === "checkbox" && Object.hasOwn(preferencias, nombre)) {
+
+                preferencias[nombre] = input.checked;
+
+                aplicarPreferencias();
+                guardarPreferencias();
+            }
+        });
+
+    });
+
+
+    /* 9. NAVEGACIÓN CON FLECHAS EN LOS PERFILES */
+
+    document.querySelectorAll('[role="radiogroup"]').forEach(grupo => {
+
+        grupo.addEventListener("keydown", event => {
+
+            if (!["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp"].includes(event.key)) {
+                return;
+            }
+
+            const radios = Array.from(
+                grupo.querySelectorAll('[role="radio"][data-tema]')
+            );
+
+            if (radios.length === 0) return;
+
+            event.preventDefault();
+
+            const actual = radios.indexOf(document.activeElement);
+            const direccion =
+                event.key === "ArrowRight" || event.key === "ArrowDown"
+                    ? 1
+                    : -1;
+
+            const siguiente =
+                (actual + direccion + radios.length) % radios.length;
+
+            radios[siguiente].focus();
+            cambiarTema(radios[siguiente].dataset.tema);
+        });
+
+    });
+
+
+    /* 10. BOTÓN PARA GUARDAR */
+
+    const botonGuardar = document.querySelector("#guardar-preferencias");
+    const mensajeEstado = document.querySelector("#estado-preferencias");
+
+    if (botonGuardar) {
+
+        botonGuardar.addEventListener("click", () => {
+
+            const guardado = guardarPreferencias();
+
+            if (mensajeEstado) {
+                mensajeEstado.textContent = guardado
+                    ? "Preferencias guardadas correctamente."
+                    : "No fue posible guardar las preferencias en este navegador.";
+            }
+        });
+    }
+
+
+    /* 11. RESTABLECER VALORES PREDETERMINADOS */
+
+    const botonRestablecer =
+        document.querySelector("#restablecer-preferencias");
+
+    if (botonRestablecer) {
+
+        botonRestablecer.addEventListener("click", () => {
+
+            preferencias = { ...valoresPredeterminados };
+
+            aplicarPreferencias();
+            guardarPreferencias();
+
+            if (mensajeEstado) {
+                mensajeEstado.textContent =
+                    "Se restablecieron las preferencias predeterminadas.";
+            }
+        });
+    }
+
+
+    /* 12. MODAL FLOTANTE DE ACCESIBILIDAD */
+
+    const botonAccesibilidad =
+        document.querySelector(".boton-accesibilidad");
+
+    const menuAccesibilidad =
+        document.querySelector("#menu-accesibilidad");
+
+    const modalAccesibilidad =
+        document.querySelector(".modal-accesibilidad");
+
+    const botonCerrar =
+        document.querySelector(".btn-cerrar-modal");
 
     if (
-        event.key === "Escape" &&
-        !menuAccesibilidad.hidden
+        botonAccesibilidad &&
+        menuAccesibilidad &&
+        modalAccesibilidad &&
+        botonCerrar
     ) {
-        cerrarModal();
+
+        function abrirModal() {
+
+            menuAccesibilidad.hidden = false;
+
+            botonAccesibilidad.setAttribute("aria-expanded", "true");
+
+            botonCerrar.focus();
+        }
+
+        function cerrarModal() {
+
+            menuAccesibilidad.hidden = true;
+
+            botonAccesibilidad.setAttribute("aria-expanded", "false");
+
+            botonAccesibilidad.focus();
+        }
+
+        botonAccesibilidad.addEventListener("click", abrirModal);
+
+        botonCerrar.addEventListener("click", cerrarModal);
+
+        menuAccesibilidad.addEventListener("click", event => {
+
+            if (event.target === menuAccesibilidad) {
+                cerrarModal();
+            }
+        });
+
+        document.addEventListener("keydown", event => {
+
+            if (event.key === "Escape" && !menuAccesibilidad.hidden) {
+                cerrarModal();
+            }
+        });
+
+
+        /* Mantener el teclado dentro del modal */
+
+        modalAccesibilidad.addEventListener("keydown", event => {
+
+            if (event.key !== "Tab") return;
+
+            const elementos = Array.from(
+                modalAccesibilidad.querySelectorAll(
+                    'a[href], button:not(:disabled), input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex]:not([tabindex="-1"])'
+                )
+            ).filter(elemento =>
+                !elemento.hidden && elemento.getClientRects().length > 0
+            );
+
+            if (elementos.length === 0) {
+                event.preventDefault();
+                modalAccesibilidad.focus();
+                return;
+            }
+
+            const primero = elementos[0];
+            const ultimo = elementos[elementos.length - 1];
+
+            if (event.shiftKey && document.activeElement === primero) {
+
+                event.preventDefault();
+                ultimo.focus();
+
+            } else if (
+                !event.shiftKey &&
+                document.activeElement === ultimo
+            ) {
+
+                event.preventDefault();
+                primero.focus();
+            }
+        });
+
     }
 
-});
+    /* 13. ATAJOS DE TECLADO ANUNCIADOS EN LA PÁGINA */
+    function ejecutarAtajoPendiente() {
+        try {
+            const pendiente = sessionStorage.getItem("gidtiitec-atajo-pendiente");
+            if (!pendiente) return;
+            sessionStorage.removeItem("gidtiitec-atajo-pendiente");
 
-
-/* =====================================
-   CERRAR AL HACER CLIC FUERA
-===================================== */
-
-menuAccesibilidad.addEventListener("click", function(event) {
-
-    // Comprobamos si el clic fue directamente
-    // sobre el fondo y no sobre el cuadro del modal
-
-    if (event.target === menuAccesibilidad) {
-        cerrarModal();
+            if (pendiente === "buscar") {
+                document.querySelector('input[type="search"], [role="search"] input')?.focus();
+            } else if (pendiente === "modal") {
+                botonAccesibilidad?.click();
+            }
+        } catch (error) {
+            console.warn("No se pudo completar el atajo pendiente:", error);
+        }
     }
 
-});
+    document.addEventListener("keydown", event => {
+        if (!event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+
+        const tecla = event.key;
+        if (!["1", "2", "3", "4"].includes(tecla)) return;
+
+        const destino = {
+            "1": () => {
+                const enlaceInicio = document.querySelector(
+                    '.navegacion-principal a[href*="index.html"]'
+                );
+                if (enlaceInicio) window.location.href = enlaceInicio.href;
+            },
+            "2": () => document.querySelector("#contenido-principal")?.focus(),
+            "3": () => {
+                const buscador = document.querySelector(
+                    'input[type="search"], [role="search"] input'
+                );
+                if (buscador) {
+                    buscador.focus();
+                    return;
+                }
+
+                try {
+                    sessionStorage.setItem("gidtiitec-atajo-pendiente", "buscar");
+                } catch (error) {
+                    console.warn("No se pudo preparar el atajo de búsqueda:", error);
+                }
+                document.querySelector('.navegacion-principal a[href*="index.html"]')?.click();
+            },
+            "4": () => {
+                if (botonAccesibilidad) {
+                    botonAccesibilidad.click();
+                    return;
+                }
+
+                try {
+                    sessionStorage.setItem("gidtiitec-atajo-pendiente", "modal");
+                } catch (error) {
+                    console.warn("No se pudo preparar el atajo del panel:", error);
+                }
+                document.querySelector('.navegacion-principal a[href*="index.html"]')?.click();
+            }
+        }[tecla];
+
+        if (destino) {
+            event.preventDefault();
+            destino();
+        }
+    });
 
 
-/* =====================================
-   CONTROL DEL FOCO DEL TECLADO
-===================================== */
+    /* 14. INICIAR EL SISTEMA */
 
-modalAccesibilidad.addEventListener("keydown", function(event) {
+    aplicarPreferencias();
+    ejecutarAtajoPendiente();
 
-    if (event.key !== "Tab") {
-        return;
-    }
+    console.log("Sistema de accesibilidad GIDTIITEC iniciado.");
 
-    // Buscamos los elementos que pueden recibir el foco
-    const elementosEnfocables = modalAccesibilidad.querySelectorAll(
-        'button:not(:disabled), a[href], input:not(:disabled), [tabindex]:not([tabindex="-1"])'
-    );
-
-    const primero = elementosEnfocables[0];
-    const ultimo = elementosEnfocables[elementosEnfocables.length - 1];
-
-    // Si presionamos Shift + Tab estando en el primero
-    if (event.shiftKey && document.activeElement === primero) {
-
-        event.preventDefault();
-        ultimo.focus();
-
-    }
-
-    // Si presionamos Tab estando en el último
-    else if (!event.shiftKey && document.activeElement === ultimo) {
-
-        event.preventDefault();
-        primero.focus();
-
-    }
-
-});
+})();

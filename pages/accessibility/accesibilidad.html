@@ -32,7 +32,7 @@
     </header>
    
 
-<main class="pagina-accesibilidad">
+<main id="contenido-principal" class="pagina-accesibilidad" tabindex="-1">
         
     <!-- Migas de pan (Breadcrumbs) -->
    <nav class="migas-pan" aria-label="Ruta de navegación">
@@ -57,19 +57,19 @@
         <div class="config-grupo">
             <span class="config-subtitulo">Escala de lectura global</span>
             <div class="grupo-escalas" role="group" aria-label="Escala de lectura global">
-                <button type="button" class="btn-escala activo" aria-pressed="true">
+                <button type="button" class="btn-escala activo" data-escala="1" aria-pressed="true">
                     <span class="porcentaje">100%</span>
                     <span class="etiqueta-escala">Estándar</span>
                 </button>
-                <button type="button" class="btn-escala" aria-pressed="false">
+                <button type="button" class="btn-escala" data-escala="1.25" aria-pressed="false">
                     <span class="porcentaje">125%</span>
                     <span class="etiqueta-escala">Medio</span>
                 </button>
-                <button type="button" class="btn-escala" aria-pressed="false">
+                <button type="button" class="btn-escala" data-escala="1.5" aria-pressed="false">
                     <span class="porcentaje">150%</span>
                     <span class="etiqueta-escala">Grande</span>
                 </button>
-                <button type="button" class="btn-escala" aria-pressed="false">
+                <button type="button" class="btn-escala" data-escala="1.75" aria-pressed="false">
                     <span class="porcentaje">175%</span>
                     <span class="etiqueta-escala">Máximo</span>
                 </button>
@@ -79,10 +79,10 @@
         <div class="config-grupo switch-grupo">
             <div class="switch-info">
                 <span class="config-subtitulo">Tipografía de máxima legibilidad</span>
-                <p>Activa pesos visuales reforzados para mitigar fatiga visual y dislexia.</p>
+                <p>Activa pesos visuales reforzados para mitigar fatiga visual.</p>
             </div>
             <label class="switch" aria-label="Activar tipografía de máxima legibilidad">
-                <input type="checkbox">
+                <input type="checkbox" data-preferencia="tipografia-legible">
                 <span class="slider round"></span>
             </label>
         </div>
@@ -90,7 +90,7 @@
         <div class="config-grupo">
             <label for="select-interlineado" class="config-subtitulo">Interlineado y respiración de párrafo</label>
             <div class="select-personalizado-contenedor">
-                <select id="select-interlineado" class="select-interlineado">
+                <select id="select-interlineado" class="select-interlineado" data-preferencia="interlineado">
                     <option value="1.65" selected>Interlineado Holgado (1.65)</option>
                     <option value="1.2">Interlineado Estándar (1.2)</option>
                     <option value="2.0">Interlineado Amplio (2.0)</option>
@@ -111,7 +111,7 @@
             <div class="config-grupo">
                 <span class="config-subtitulo">Perfil cromático de pantalla</span>
                 <div class="grid-perfiles-cromaticos" role="radiogroup" aria-label="Perfil cromático de pantalla">
-                    <button type="button" role="radio" aria-checked="true" class="card-perfil activo">
+                    <button type="button" role="radio" aria-checked="true" class="card-perfil activo" data-tema="estandar">
                         <div class="perfil-info">
                             <span class="badge-letra">Aa</span>
                             <div>
@@ -122,7 +122,7 @@
                         <span class="icono-check">✓</span>
                     </button>
                     
-                    <button type="button" role="radio" aria-checked="false" class="card-perfil">
+                    <button type="button" role="radio" aria-checked="false" class="card-perfil" data-tema="contraste-claro">
                         <div class="perfil-info">
                             <span class="badge-letra">Aa</span>
                             <div>
@@ -132,7 +132,7 @@
                         </div>
                     </button>
 
-                    <button type="button" role="radio" aria-checked="false" class="card-perfil">
+                    <button type="button" role="radio" aria-checked="false" class="card-perfil" data-tema="contraste-oscuro">
                         <div class="perfil-info">
                             <span class="badge-letra">Aa</span>
                             <div>
@@ -142,7 +142,7 @@
                         </div>
                     </button>
 
-                    <button type="button" role="radio" aria-checked="false" class="card-perfil">
+                    <button type="button" role="radio" aria-checked="false" class="card-perfil" data-tema="monocromatico">
                         <div class="perfil-info">
                             <span class="badge-letra">Aa</span>
                             <div>
@@ -161,7 +161,7 @@
                     <p>Enfatiza de inmediato todo destino navegable interactivo.</p>
                 </div>
                 <label class="switch" aria-label="Subrayar todos los enlaces y botones">
-                    <input type="checkbox" checked>
+                    <input type="checkbox" data-preferencia="subrayar-enlaces" checked >
                     <span class="slider round"></span>
                 </label>
             </div>
@@ -172,7 +172,7 @@
                     <p>Desactiva transiciones rápidas para prevenir mareos y sobreestimulación vestibular.</p>
                 </div>
                 <label class="switch" aria-label="Reducir animaciones de pantalla">
-                    <input type="checkbox" checked>
+                    <input type="checkbox" data-preferencia="reducir-animaciones" checked>
                     <span class="slider round"></span>
                 </label>
             </div>
@@ -192,7 +192,7 @@
                     <p>Aplica un contorno de alto contraste (3px) para rastrear la tecla Tab.</p>
                 </div>
                 <label class="switch" aria-label="Foco de teclado visible de alto relieve">
-                    <input type="checkbox" checked>
+                    <input type="checkbox" data-preferencia="foco-visible" checked>
                     <span class="slider round"></span>
                 </label>
             </div>
@@ -202,10 +202,7 @@
                     <span class="config-subtitulo">Optimización para lectores de pantalla</span>
                     <p>Soporte nativo semántico ARIA para NVDA, JAWS, VoiceOver y TalkBack.</p>
                 </div>
-                <label class="switch" aria-label="Optimización para lectores de pantalla">
-                    <input type="checkbox" checked>
-                    <span class="slider round"></span>
-                </label>
+
             </div>
 
             <!-- Tabla de Atajos de Teclado -->
@@ -255,6 +252,9 @@
             <button type="button" class="btn-primario" id="guardar-preferencias">
                 ✓ Guardar preferencias de accesibilidad
             </button>
+
+
+            <p id="estado-preferencias" role="status" aria-live="polite"></p>
         </div>
 
     
@@ -295,6 +295,8 @@
             </div>
         </div>
     </footer>
-
+    <script src="../../js/accessibility.js" defer></script>
 </body>
+
+
 </html>

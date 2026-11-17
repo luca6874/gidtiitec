@@ -45,6 +45,19 @@ body {
     font-family: var(--font-main);
     background-color: var(--color-background);
     color: var(--color-text);
+    line-height: var(--interlineado, 1.65);
+}
+
+/* Mantiene el interlineado elegido incluso en componentes con una regla propia. */
+html[style] body :is(p, li, td, th, label, a) {
+    line-height: var(--interlineado, 1.65) !important;
+}
+
+button,
+input,
+select,
+textarea {
+    line-height: normal;
 }
 
 /* Imágenes adaptables */

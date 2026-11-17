@@ -10,7 +10,7 @@ nav[aria-label="Ruta de Navegacion"] {
     list-style: none;
     padding: 0;
     margin: 0;
-    font-size: 13px;
+    font-size: 0.8125rem;
     color: var(--color-primary);
     font-weight: 500;
 }
@@ -21,14 +21,14 @@ nav[aria-label="Ruta de Navegacion"] {
 
 .presentacion h1 {
     margin: 0 0 6px 0;
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 700;
     color: var(--color-text);
 }
 
 .presentacion h2 {
     margin: 0;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 400;
     color: var(--color-text-secondary);
 }
@@ -84,13 +84,13 @@ nav[aria-label="Ruta de Navegacion"] {
     background-color: var(--color-primary);
     border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 600;
 }
 
 .hero-contenido h2 {
     margin: 0;
-    font-size: 30px;
+    font-size: 1.875rem;
     line-height: 1.2;
     font-weight: 700;
 }
@@ -103,7 +103,7 @@ nav[aria-label="Ruta de Navegacion"] {
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 6px;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 600;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
@@ -123,13 +123,13 @@ nav[aria-label="Ruta de Navegacion"] {
 
 .encabezado-proyectos h2 {
     margin: 0 0 6px 0;
-    font-size: 22px;
+    font-size: 1.375rem;
     color: var(--color-text);
 }
 
 .encabezado-proyectos h3 {
     margin: 0;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 400;
     color: var(--color-text-secondary);
 }
@@ -222,7 +222,7 @@ nav[aria-label="Ruta de Navegacion"] {
     background-color: #ffffff;
     border: 1px solid #d0d7de;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: var(--color-text);
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
@@ -254,7 +254,7 @@ nav[aria-label="Ruta de Navegacion"] {
     border: 1px solid #d0d7de;
     padding: 10px 14px;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 500;
     color: var(--color-filtro-text);
     cursor: pointer;
@@ -304,12 +304,12 @@ nav[aria-label="Ruta de Navegacion"] {
 
 .cabecera-seccion-proyectos h2 {
     margin: 0;
-    font-size: 22px;
+    font-size: 1.375rem;
     color: var(--color-text);
 }
 
 .contador-proyectos {
-    font-size: 13px;
+    font-size: 0.8125rem;
     color: var(--color-text-secondary);
     font-weight: 500;
 }
@@ -362,7 +362,7 @@ nav[aria-label="Ruta de Navegacion"] {
 }
 
 .tag {
-    font-size: 10px;
+    font-size: 0.625rem;
     font-weight: 700;
     padding: 3px 8px;
     border-radius: 4px;
@@ -389,21 +389,21 @@ nav[aria-label="Ruta de Navegacion"] {
 
 .tarjeta-proyecto h3 {
     margin: 4px 0 0 0;
-    font-size: 17px;
+    font-size: 1.0625rem;
     color: var(--color-text);
     font-weight: 700;
 }
 
 .tarjeta-proyecto .autor {
     margin: 0;
-    font-size: 13px;
+    font-size: 0.8125rem;
     color: var(--color-text-secondary);
     font-weight: 500;
 }
 
 .tarjeta-proyecto .descripcion {
     margin: 4px 0 0 0;
-    font-size: 13px;
+    font-size: 0.8125rem;
     color: var(--color-text-secondary);
     line-height: 1.4;
 }
