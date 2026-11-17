@@ -294,20 +294,48 @@
 html[data-modo-visual="contraste-oscuro"] .modal-accesibilidad,
 html[data-modo-visual="contraste-oscuro"] .modal-body,
 html[data-modo-visual="contraste-oscuro"] .btn-tamano,
-html[data-modo-visual="contraste-oscuro"] .modo-card,
-html[data-modo-visual="contraste-oscuro"] .enlace-mas-opciones {
+html[data-modo-visual="contraste-oscuro"] .modo-card {
     background-color: #171717;
     color: #ffffff;
     border-color: #777777;
 }
 
+/* El encabezado usa amarillo como fondo: todo su contenido debe ser negro. */
+html[data-modo-visual="contraste-oscuro"] .modal-header,
+html[data-modo-visual="contraste-oscuro"] .modal-header * {
+    color: #000000;
+}
+
+html[data-modo-visual="contraste-oscuro"] .modal-icono {
+    filter: brightness(0);
+}
+
 html[data-modo-visual="contraste-oscuro"] .modo-card.activo,
 html[data-modo-visual="contraste-oscuro"] .btn-tamano.activo,
 html[data-modo-visual="contraste-oscuro"] .btn-tamano:hover,
-html[data-modo-visual="contraste-oscuro"] .modo-card:hover,
-html[data-modo-visual="contraste-oscuro"] .enlace-mas-opciones:hover {
+html[data-modo-visual="contraste-oscuro"] .modo-card:hover {
     background-color: #252525;
     border-color: #ffd700;
+}
+
+html[data-modo-visual="contraste-oscuro"] .modo-card.activo .radio-circulo {
+    box-shadow: inset 0 0 0 2px #000000;
+}
+
+html[data-modo-visual="contraste-oscuro"] .enlace-mas-opciones {
+    background-color: var(--color-accent);
+    color: #000000;
+    border-color: var(--color-accent);
+}
+
+html[data-modo-visual="contraste-oscuro"] .enlace-mas-opciones strong,
+html[data-modo-visual="contraste-oscuro"] .enlace-mas-opciones span {
+    color: #000000;
+}
+
+html[data-modo-visual="contraste-oscuro"] .enlace-mas-opciones:hover {
+    background-color: #e6c200;
+    border-color: #e6c200;
 }
 
 html[data-modo-visual="contraste-oscuro"] .badge-predeterminado,
@@ -331,6 +359,11 @@ html[data-modo-visual="estandar"] {
     --color-primary: #00246B;
     --color-secondary: #1644B1;
     --color-accent: #F0B429;
+    --color-border: #d0d7de;
+    --color-filtro-bg: #EAF2FF;
+    --color-filtro-text: #00246B;
+    --color-status-success-bg: #E2F4E8;
+    --color-status-success-text: #137333;
 }
 
 /* Alto contraste claro */
@@ -342,6 +375,11 @@ html[data-modo-visual="contraste-claro"] {
     --color-primary: #000000;
     --color-secondary: #000000;
     --color-accent: #0033CC;
+    --color-border: #000000;
+    --color-filtro-bg: #FFFFFF;
+    --color-filtro-text: #000000;
+    --color-status-success-bg: #FFFFFF;
+    --color-status-success-text: #000000;
 }
 
 /* Alto contraste oscuro */
@@ -351,8 +389,37 @@ html[data-modo-visual="contraste-oscuro"] {
     --color-text: #FFFFFF;
     --color-text-secondary: #EEEEEE;
     --color-primary: #FFD700;
-    --color-secondary: #FFFFFF;
+    --color-secondary: #000000;
     --color-accent: #FFD700;
+    --color-border: #777777;
+    --color-filtro-bg: #111111;
+    --color-filtro-text: #FFFFFF;
+    --color-status-success-bg: #FFD700;
+    --color-status-success-text: #000000;
+}
+
+html[data-modo-visual="contraste-oscuro"] .encabezado,
+html[data-modo-visual="contraste-oscuro"] .pie-pagina,
+html[data-modo-visual="contraste-oscuro"] .footer-barra-superior {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+html[data-modo-visual="contraste-oscuro"] .navegacion-principal a,
+html[data-modo-visual="contraste-oscuro"] .navegacion-footer a {
+    color: #FFFFFF;
+}
+
+html[data-modo-visual="contraste-oscuro"] .navegacion-principal .btn-login {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #000000;
+}
+
+html[data-modo-visual="contraste-oscuro"] .navegacion-principal .btn-login:hover {
+    background-color: #e6c200;
+    border-color: #e6c200;
+    color: #000000;
 }
 
 /* Monocromático */

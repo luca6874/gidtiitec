@@ -18,6 +18,9 @@
     --color-surface: #F4F6F8;
     --color-text: #222222;
     --color-text-secondary: #555555;
+    --color-border: #d0d7de;
+    --color-status-success-bg: #E2F4E8;
+    --color-status-success-text: #137333;
 
     /* Tipografía */
     --font-main: Arial, sans-serif;
