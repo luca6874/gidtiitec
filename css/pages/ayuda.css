@@ -1,0 +1,532 @@
+body {
+    background: #f7f8fc;
+}
+
+.pagina-ayuda {
+    width: min(1104px, calc(100% - 48px));
+    margin: 0 auto;
+    padding-bottom: 72px;
+}
+
+.ruta-ayuda {
+    padding: 16px 0 14px;
+}
+
+.ruta-ayuda .breadcrumbs {
+    display: flex;
+    gap: 10px;
+    color: #8794a8;
+    font-size: 0.75rem;
+}
+
+.ruta-ayuda .breadcrumbs li + li::before {
+    content: "/";
+    margin-right: 10px;
+    color: #aab3c0;
+}
+
+.volver-ayuda {
+    display: inline-block;
+    margin-top: 3px;
+    color: #003a91;
+    font-size: 0.875rem;
+}
+
+.hero-ayuda {
+    min-height: 283px;
+    padding: 58px 24px 48px;
+    border-radius: 8px;
+    background: linear-gradient(105deg, #1c3c70 0%, #2874df 100%);
+    color: #ffffff;
+    text-align: center;
+}
+
+.hero-ayuda h1 {
+    margin: 0 0 2px;
+    font-size: clamp(2rem, 3vw, 2.35rem);
+    font-weight: 600;
+}
+
+.hero-ayuda > p {
+    margin: 0 auto 22px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.busqueda-ayuda {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: min(684px, 100%);
+    min-height: 49px;
+    margin: 0 auto;
+    padding: 6px;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #667085;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.icono-busqueda-ayuda {
+    padding: 0 4px 0 11px;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.busqueda-ayuda input {
+    flex: 1;
+    min-width: 0;
+    height: 36px;
+    border: 0;
+    outline: 0;
+    color: #253247;
+    font: inherit;
+    font-size: 0.8rem;
+}
+
+.busqueda-ayuda button {
+    min-height: 36px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 4px;
+    background: #00246b;
+    color: #ffffff;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.modulos-ayuda {
+    margin-top: 46px;
+}
+
+.modulos-ayuda > h2,
+.preguntas-ayuda > h2 {
+    margin: 0 0 18px;
+    color: #13243d;
+    font-size: 1.55rem;
+}
+
+.rejilla-modulos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.tarjeta-ayuda {
+    min-height: 244px;
+    padding: 21px;
+    border: 1px solid #d1d5dc;
+    background: #ffffff;
+    box-shadow: 0 1px 2px rgba(20, 37, 60, 0.08);
+}
+
+.icono-tarjeta-ayuda,
+.icono-contacto-ayuda {
+    display: grid;
+    width: 112px;
+    height: 63px;
+    margin: 0 auto 22px;
+    place-items: center;
+    border-radius: 4px;
+    background: #e5efff;
+    color: #073d71;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.tarjeta-ayuda h3 {
+    margin: 0 0 3px;
+    color: #10243d;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.tarjeta-ayuda p,
+.contacto-ayuda > p {
+    margin: 0;
+    color: #454d5b;
+    font-size: 0.82rem;
+    line-height: 1.55;
+}
+
+.tarjeta-ayuda > a {
+    display: inline-block;
+    margin-top: 17px;
+    color: #697386;
+    font-size: 0.7rem;
+}
+
+.tarjeta-ayuda > a::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: #0753d8;
+}
+
+.ayuda-inferior {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+    align-items: start;
+    gap: 28px;
+    margin-top: 39px;
+}
+
+.eyebrow-ayuda {
+    margin: 0 0 3px;
+    color: #0050d8;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.preguntas-ayuda > h2 {
+    margin-bottom: 20px;
+}
+
+.preguntas-ayuda details {
+    margin-bottom: 13px;
+    border: 1px solid #cbd0d8;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #15263e;
+}
+
+.preguntas-ayuda summary {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 69px;
+    padding: 12px 19px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    list-style: none;
+}
+
+.preguntas-ayuda summary::-webkit-details-marker {
+    display: none;
+}
+
+.preguntas-ayuda summary::after {
+    content: "⌄";
+    margin-left: auto;
+    color: #697386;
+}
+
+.preguntas-ayuda summary span {
+    display: grid;
+    width: 29px;
+    height: 29px;
+    flex: 0 0 29px;
+    place-items: center;
+    background: #e5efff;
+    color: #003b78;
+    font-size: 0.68rem;
+}
+
+.preguntas-ayuda details > p {
+    margin: 0;
+    padding: 0 20px 17px 62px;
+    color: #454d5b;
+    font-size: 0.85rem;
+}
+
+.contacto-ayuda {
+    margin-top: 0;
+    padding: 26px 28px;
+    border: 1px solid #d1d5dc;
+    background: #ffffff;
+}
+
+.icono-contacto-ayuda {
+    width: 43px;
+    height: 43px;
+    margin: 0 0 15px;
+    font-size: 1.25rem;
+}
+
+.contacto-ayuda h3 {
+    margin: 0 0 4px;
+    color: #13243d;
+    font-size: 1.1rem;
+}
+
+.datos-contacto-ayuda {
+    margin-top: 20px;
+    padding: 10px 13px;
+    border-radius: 4px;
+    background: #eef3ff;
+}
+
+.datos-contacto-ayuda p {
+    margin: 7px 0 12px;
+    color: #1e2b41;
+    font-size: 0.73rem;
+    line-height: 1.55;
+}
+
+.datos-contacto-ayuda p:last-child {
+    margin-bottom: 7px;
+}
+
+.datos-contacto-ayuda p > span {
+    display: inline-block;
+    width: 21px;
+    color: #0753d8;
+    font-size: 1rem;
+}
+
+.datos-contacto-ayuda a {
+    margin-left: 21px;
+    color: #0050d8;
+    font-weight: 600;
+}
+
+.enlace-consulta-ayuda {
+    display: block;
+    margin-top: 15px;
+    padding: 9px;
+    border-radius: 4px;
+    background: #e5efff;
+    color: #073d71;
+    text-align: center;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.pagina-ayuda ~ .boton-accesibilidad {
+    right: 24px;
+    bottom: 24px;
+}
+
+html[data-modo-visual="contraste-oscuro"] .pagina-ayuda ~ .boton-accesibilidad {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #000000;
+}
+
+/* Mantiene los dos perfiles de alto contraste en todos los bloques de Ayuda. */
+html[data-modo-visual="contraste-claro"] body,
+html[data-modo-visual="contraste-oscuro"] body {
+    background: var(--color-background);
+    color: var(--color-text);
+}
+
+html[data-modo-visual="contraste-claro"] .hero-ayuda {
+    background: #000000;
+    color: #ffffff;
+}
+
+html[data-modo-visual="contraste-oscuro"] .hero-ayuda {
+    background: #ffd700;
+    color: #000000;
+}
+
+html[data-modo-visual="contraste-claro"] .busqueda-ayuda,
+html[data-modo-visual="contraste-claro"] .tarjeta-ayuda,
+html[data-modo-visual="contraste-claro"] .preguntas-ayuda details,
+html[data-modo-visual="contraste-claro"] .contacto-ayuda {
+    border-color: #000000;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+html[data-modo-visual="contraste-oscuro"] .busqueda-ayuda,
+html[data-modo-visual="contraste-oscuro"] .tarjeta-ayuda,
+html[data-modo-visual="contraste-oscuro"] .preguntas-ayuda details,
+html[data-modo-visual="contraste-oscuro"] .contacto-ayuda {
+    border-color: #777777;
+    background-color: #171717;
+    color: #ffffff;
+}
+
+html[data-modo-visual="contraste-claro"] .busqueda-ayuda input,
+html[data-modo-visual="contraste-claro"] .modulos-ayuda > h2,
+html[data-modo-visual="contraste-claro"] .preguntas-ayuda > h2,
+html[data-modo-visual="contraste-claro"] .tarjeta-ayuda h3,
+html[data-modo-visual="contraste-claro"] .tarjeta-ayuda p,
+html[data-modo-visual="contraste-claro"] .contacto-ayuda h3,
+html[data-modo-visual="contraste-claro"] .contacto-ayuda > p,
+html[data-modo-visual="contraste-claro"] .preguntas-ayuda summary,
+html[data-modo-visual="contraste-claro"] .preguntas-ayuda details > p,
+html[data-modo-visual="contraste-claro"] .datos-contacto-ayuda p {
+    color: #000000;
+}
+
+html[data-modo-visual="contraste-oscuro"] .busqueda-ayuda input,
+html[data-modo-visual="contraste-oscuro"] .modulos-ayuda > h2,
+html[data-modo-visual="contraste-oscuro"] .preguntas-ayuda > h2,
+html[data-modo-visual="contraste-oscuro"] .tarjeta-ayuda h3,
+html[data-modo-visual="contraste-oscuro"] .tarjeta-ayuda p,
+html[data-modo-visual="contraste-oscuro"] .contacto-ayuda h3,
+html[data-modo-visual="contraste-oscuro"] .contacto-ayuda > p,
+html[data-modo-visual="contraste-oscuro"] .preguntas-ayuda summary,
+html[data-modo-visual="contraste-oscuro"] .preguntas-ayuda details > p,
+html[data-modo-visual="contraste-oscuro"] .datos-contacto-ayuda p {
+    color: #ffffff;
+}
+
+html[data-modo-visual="contraste-claro"] .busqueda-ayuda input {
+    background-color: #ffffff;
+}
+
+html[data-modo-visual="contraste-oscuro"] .busqueda-ayuda input {
+    background-color: #171717;
+}
+
+html[data-modo-visual="contraste-claro"] .busqueda-ayuda input::placeholder {
+    color: #000000;
+    opacity: 1;
+}
+
+html[data-modo-visual="contraste-oscuro"] .busqueda-ayuda input::placeholder {
+    color: #ffffff;
+    opacity: 1;
+}
+
+html[data-modo-visual="contraste-claro"] .busqueda-ayuda button,
+html[data-modo-visual="contraste-claro"] .enlace-consulta-ayuda {
+    border-color: #000000;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+html[data-modo-visual="contraste-oscuro"] .busqueda-ayuda button,
+html[data-modo-visual="contraste-oscuro"] .enlace-consulta-ayuda {
+    border-color: #ffd700;
+    background-color: #ffd700;
+    color: #000000;
+}
+
+html[data-modo-visual="contraste-claro"] .icono-tarjeta-ayuda,
+html[data-modo-visual="contraste-claro"] .icono-contacto-ayuda,
+html[data-modo-visual="contraste-claro"] .preguntas-ayuda summary span,
+html[data-modo-visual="contraste-claro"] .datos-contacto-ayuda {
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+html[data-modo-visual="contraste-oscuro"] .icono-tarjeta-ayuda,
+html[data-modo-visual="contraste-oscuro"] .icono-contacto-ayuda,
+html[data-modo-visual="contraste-oscuro"] .preguntas-ayuda summary span,
+html[data-modo-visual="contraste-oscuro"] .datos-contacto-ayuda {
+    border: 1px solid #ffd700;
+    background-color: #111111;
+    color: #ffd700;
+}
+
+html[data-modo-visual="contraste-claro"] .ruta-ayuda .breadcrumbs,
+html[data-modo-visual="contraste-claro"] .ruta-ayuda .breadcrumbs li + li::before,
+html[data-modo-visual="contraste-claro"] .volver-ayuda,
+html[data-modo-visual="contraste-claro"] .eyebrow-ayuda,
+html[data-modo-visual="contraste-claro"] .tarjeta-ayuda > a,
+html[data-modo-visual="contraste-claro"] .datos-contacto-ayuda a {
+    color: #000000;
+}
+
+html[data-modo-visual="contraste-oscuro"] .ruta-ayuda .breadcrumbs,
+html[data-modo-visual="contraste-oscuro"] .ruta-ayuda .breadcrumbs li + li::before,
+html[data-modo-visual="contraste-oscuro"] .volver-ayuda,
+html[data-modo-visual="contraste-oscuro"] .eyebrow-ayuda,
+html[data-modo-visual="contraste-oscuro"] .tarjeta-ayuda > a,
+html[data-modo-visual="contraste-oscuro"] .datos-contacto-ayuda a {
+    color: #ffd700;
+}
+
+html[data-modo-visual="contraste-claro"] .datos-contacto-ayuda a {
+    color: #000000;
+    text-decoration: underline;
+}
+
+html[data-modo-visual="contraste-claro"] .datos-contacto-ayuda p > span,
+html[data-modo-visual="contraste-claro"] .preguntas-ayuda summary::after {
+    color: #000000;
+}
+
+html[data-modo-visual="contraste-oscuro"] .datos-contacto-ayuda a {
+    text-decoration: underline;
+}
+
+html[data-modo-visual="contraste-oscuro"] .datos-contacto-ayuda p > span,
+html[data-modo-visual="contraste-oscuro"] .preguntas-ayuda summary::after {
+    color: #ffd700;
+}
+
+html[data-modo-visual="contraste-claro"] .tarjeta-ayuda > a::before {
+    background-color: #000000;
+}
+
+html[data-modo-visual="contraste-oscuro"] .tarjeta-ayuda > a::before {
+    background-color: #ffd700;
+}
+
+@media (max-width: 760px) {
+    .rejilla-modulos {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta-ayuda {
+        min-height: auto;
+    }
+
+    .icono-tarjeta-ayuda {
+        margin-left: 0;
+    }
+
+    .ayuda-inferior {
+        grid-template-columns: 1fr;
+    }
+
+    .contacto-ayuda {
+        order: -1;
+    }
+}
+
+@media (max-width: 520px) {
+    .pagina-ayuda {
+        width: calc(100% - 32px);
+    }
+
+    .hero-ayuda {
+        min-height: 0;
+        padding: 38px 18px;
+    }
+
+    .hero-ayuda > p {
+        font-size: 0.82rem;
+    }
+
+    .salto-desktop {
+        display: none;
+    }
+
+    .busqueda-ayuda {
+        flex-wrap: wrap;
+    }
+
+    .busqueda-ayuda input {
+        flex-basis: calc(100% - 56px);
+    }
+
+    .busqueda-ayuda button {
+        width: 100%;
+    }
+
+    .modulos-ayuda {
+        margin-top: 32px;
+    }
+
+    .modulos-ayuda > h2,
+    .preguntas-ayuda > h2 {
+        font-size: 1.3rem;
+    }
+
+    .preguntas-ayuda summary {
+        font-size: 0.85rem;
+    }
+}

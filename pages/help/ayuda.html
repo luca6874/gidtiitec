@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/accessibility.css">
+    <link rel="stylesheet" href="../../css/pages/index.css">
+    <link rel="stylesheet" href="../../css/pages/ayuda.css">
+    <link rel="stylesheet" href="../../css/lsm-player.css">
+    <title>Centro de Ayuda - GIDTIITEC</title>
+</head>
+<body data-lsm-video="../../assets/videos/video ayudar.mp4">
+    <header class="encabezado">
+        <div id="logos-header">
+            <img src="../../assets/images/logos/GIDTIITEC-logo.webp" alt="Logo de GIDTIITEC">
+            <img src="../../assets/images/logos/dasc-logo.png" alt="Logo del Departamento Académico de Sistemas Computacionales">
+        </div>
+        <nav class="navegacion-principal" aria-label="Navegación principal">
+            <a href="../../index.html"><img src="../../assets/images/iconos/inicio-icono.png" alt="" class="icono-nav"> Inicio</a>
+            <a href="ayuda.html" aria-current="page"><img src="../../assets/images/iconos/ayuda-icono.png" alt="" class="icono-nav"> Ayuda</a>
+            <a href="#">Miembros</a>
+            <a href="../auth/login.html" class="btn-login">Iniciar Sesión</a>
+        </nav>
+    </header>
+
+    <main id="contenido-principal" class="pagina-ayuda" tabindex="-1">
+        <nav class="ruta-ayuda" aria-label="Ruta de navegación">
+            <ol class="breadcrumbs"><li><a href="../../index.html">WEB</a></li><li>Ayuda</li><li aria-current="page">Centro de ayuda</li></ol>
+            <a class="volver-ayuda" href="../../index.html" aria-label="Volver al inicio">← Volver</a>
+        </nav>
+
+        <section class="hero-ayuda" aria-labelledby="titulo-centro-ayuda">
+            <h1 id="titulo-centro-ayuda">Centro de Ayuda</h1>
+            <p>Guías de procedimiento, preguntas frecuentes y orientación técnica para la comunidad<br class="salto-desktop"> docente, investigadora y estudiantil de GIDTIITEC.</p>
+            <form class="busqueda-ayuda" role="search">
+                <label class="sr-only" for="buscar-ayuda">Buscar en las guías de ayuda</label>
+                <span class="icono-busqueda-ayuda" aria-hidden="true">⌕</span>
+                <input id="buscar-ayuda" type="search" placeholder="¿En qué podemos orientarte hoy? (Ej. publicar proyecto, recuperar cuenta)">
+                <button type="submit"><span aria-hidden="true">☷</span> Buscar en guías</button>
+            </form>
+        </section>
+
+        <section class="modulos-ayuda" aria-labelledby="titulo-modulos">
+            <h2 id="titulo-modulos">Módulos de Asistencia y Trámites</h2>
+            <div class="rejilla-modulos">
+                <article class="tarjeta-ayuda">
+                    <span class="icono-tarjeta-ayuda" aria-hidden="true">♙</span>
+                    <h3>1. Registro e inicio de sesión</h3>
+                    <p>Gestión de credenciales universitarias, autenticación institucional, restablecimiento de contraseñas y asignación de roles.</p>
+                    <a href="#preguntas-frecuentes" aria-label="Ver más sobre registro e inicio de sesión">Ver más</a>
+                </article>
+                <article class="tarjeta-ayuda">
+                    <span class="icono-tarjeta-ayuda" aria-hidden="true">▤</span>
+                    <h3>2. Publicación de proyectos</h3>
+                    <p>Líneas de investigación acreditadas, requisitos específicos del DASC, anexos técnicos y normativas éticas de publicación.</p>
+                    <a href="#preguntas-frecuentes" aria-label="Ver más sobre publicación de proyectos">Ver más</a>
+                </article>
+                <article class="tarjeta-ayuda">
+                    <span class="icono-tarjeta-ayuda" aria-hidden="true">✎</span>
+                    <h3>3. Edición y actualización</h3>
+                    <p>Modificación de fichas registradas, subida de nuevas versiones, control de cambios y actualización del estado del expediente.</p>
+                    <a href="#preguntas-frecuentes" aria-label="Ver más sobre edición y actualización">Ver más</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="ayuda-inferior" id="preguntas-frecuentes" aria-labelledby="titulo-preguntas-frecuentes">
+            <div class="preguntas-ayuda">
+                <p class="eyebrow-ayuda">RESPUESTAS RÁPIDAS</p>
+                <h2 id="titulo-preguntas-frecuentes">Preguntas Frecuentes (FAQ)</h2>
+                <details><summary><span>01</span> ¿Cómo sé si mi proyecto requiere revisión o pasará directamente a publicación?</summary><p>La revisión depende del tipo de proyecto y de la información proporcionada. Consulta los requisitos de publicación o contacta a la Coordinación Académica.</p></details>
+                <details><summary><span>02</span> ¿Qué documentos técnicos son obligatorios para publicar una iniciativa?</summary><p>Los anexos requeridos dependen de la convocatoria y la línea de investigación. Revisa la guía de publicación correspondiente.</p></details>
+                <details><summary><span>03</span> ¿Quién puede solicitar unirse a un proyecto en desarrollo?</summary><p>Estudiantes y personal de la comunidad universitaria pueden contactar al equipo responsable del proyecto.</p></details>
+                <details><summary><span>04</span> ¿Cómo funciona la eliminación lógica y la auditoría de expedientes?</summary><p>Los expedientes se conservan en el historial institucional para mantener trazabilidad y auditoría de cambios.</p></details>
+            </div>
+            <aside class="contacto-ayuda" aria-labelledby="titulo-contacto-ayuda">
+                <span class="icono-contacto-ayuda" aria-hidden="true">♧</span>
+                <h3 id="titulo-contacto-ayuda">¿No encontraste lo que buscas?</h3>
+                <p>Comunícate directamente con la Coordinación Académica del DASC o levanta un ticket en la Mesa de Ayuda Institucional.</p>
+                <div class="datos-contacto-ayuda">
+                    <p><span aria-hidden="true">✉</span> Mesa de Ayuda Técnica<br><a href="mailto:soporte.gidtiitec@uabcs.mx">soporte.gidtiitec@uabcs.mx</a></p>
+                    <p><span aria-hidden="true">⌖</span> Coordinación Operativa<br>Edificio de Cómputo DASC, Cubículo 14</p>
+                    <p><span aria-hidden="true">◷</span> Horario<br>Lunes a Viernes: 09:00 – 17:00 hrs</p>
+                </div>
+                <a class="enlace-consulta-ayuda" href="mailto:soporte.gidtiitec@uabcs.mx"><span aria-hidden="true">✉</span> Enviar consulta institucional</a>
+            </aside>
+        </section>
+    </main>
+
+    <button type="button" class="boton-lsm" aria-label="Activar reproductor de Lengua de Señas Mexicana" aria-expanded="false" aria-controls="reproductor-lsm">LSM</button>
+    <section id="reproductor-lsm" class="reproductor-lsm" aria-label="Video en Lengua de Señas Mexicana" aria-hidden="true" hidden>
+        <header class="reproductor-lsm-cabecera">
+            <h2>Lengua de Señas Mexicana</h2>
+            <div class="reproductor-lsm-acciones">
+                <button type="button" class="lsm-pausa" aria-label="Reproducir video LSM">Reproducir</button>
+                <button type="button" class="lsm-cerrar" aria-label="Cerrar reproductor LSM">Cerrar</button>
+            </div>
+        </header>
+        <video class="video-lsm" controls playsinline preload="none" aria-label="Interpretación de esta página en Lengua de Señas Mexicana"></video>
+    </section>
+
+        <button type="button" class="boton-accesibilidad" aria-label="Abrir opciones de accesibilidad" aria-expanded="false" aria-controls="menu-accesibilidad">
+            <img src="../../assets/images/iconos/icono-accesibilidad.png" alt="">
+        </button>
+        <div id="menu-accesibilidad" class="modal-accesibilidad-overlay" hidden>
+            <div class="modal-accesibilidad" role="dialog" aria-modal="true" aria-labelledby="titulo-accesibilidad"  tabindex="-1">
+                
+                <!-- Cabecera del Modal -->
+                <header class="modal-header">
+                    <div class="modal-header-info">
+                        <img src="../../assets/images/iconos/icono-accesibilidad.png" alt="" class="modal-icono">
+                        <div>
+                            <h2 id="titulo-accesibilidad">Accesibilidad</h2>
+                            <p>Ajustes visuales y de lectura para el portal universitario</p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-cerrar-modal" aria-label="Cerrar opciones de accesibilidad">
+                        ✕
+                    </button>
+                </header>
+
+                <!-- Cuerpo del Modal -->
+                <div class="modal-body">
+                        
+                    <!-- 1. Tamaño del texto -->
+                    <section class="accesibilidad-grupo">
+                        <div class="grupo-encabezado">
+                            <img src="../../assets/images/iconos/tamtexto-icono.png" alt="" class="icono-seccion">
+                            <h3 class="grupo-titulo">
+                                Tamaño del texto
+                            </h3>
+                            <span class="badge-predeterminado">
+                                100% (Predeterminado)
+                            </span>
+                        </div>
+                        <div class="botones-tamano" role="group" aria-label="Tamaño del texto">
+                            <button type="button" class="btn-tamano" data-escala="0.9" aria-pressed="false">
+                                A -
+                            </button>
+                            <button type="button" class="btn-tamano activo" data-escala="1" aria-pressed="true">
+                                A •
+                            </button>
+                            <button type="button" class="btn-tamano" data-escala="1.25" aria-pressed="false">
+                                A +
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- 2. Modo de visualización -->
+                    <section class="accesibilidad-grupo">
+                        <div class="grupo-encabezado">
+                            <img src="../../assets/images/iconos/tema-icono.png" alt="" class="icono-seccion">
+                            <h3 class="grupo-titulo">
+                                Modo de visualización
+                            </h3>
+                        </div>
+                        
+                        <div class="grid-modos" role="radiogroup" aria-label="Modo de visualización">
+                            <button type="button" role="radio" data-tema="estandar" aria-checked="true" class="modo-card activo">
+                                <span class="radio-circulo"></span>
+                                <span class="modo-texto">
+                                    Estándar
+                                </span>
+                            </button>
+                            <button type="button" role="radio" data-tema="contraste-claro" aria-checked="false" class="modo-card">
+                                <span class="radio-circulo"></span>
+                                <span class="modo-texto">
+                                    Contraste claro
+                                </span>
+                            </button>
+                            <button type="button" role="radio" data-tema="contraste-oscuro" aria-checked="false" class="modo-card">
+                                <span class="radio-circulo"></span>
+                                <span class="modo-texto">
+                                    Contraste oscuro
+                                </span>
+                            </button>
+                            <button type="button" role="radio" data-tema="monocromatico" aria-checked="false" class="modo-card">
+                                <span class="radio-circulo"></span>
+                                <span class="modo-texto">
+                                    Monocromático
+                                </span>
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- 3. Opciones de lectura / enlaces -->
+                    <div class="accesibilidad-opciones">
+                        <label class="opcion-checkbox">
+                            <div class="opcion-info">
+                                <img src="../../assets/images/iconos/icono-subrayar.png" alt="" class="icono-seccion">
+                                <span>Subrayar todos los enlaces</span>
+                            </div>
+                            <input type="checkbox" data-preferencia="subrayar-enlaces">
+                        </label>
+                        
+                        <label class="opcion-checkbox">
+                            <div class="opcion-info">
+                                <img src="../../assets/images/iconos/icono-libro.png" alt="" class="icono-seccion">
+                                <span>Tipografía para lectura fácil</span>
+                            </div>
+                            <input type="checkbox" data-preferencia="tipografia-legible">
+                        </label>
+                    </div>
+
+                    <!-- 4. Enlace a Más opciones -->
+                    <a href="../accessibility/accesibilidad.html" class="enlace-mas-opciones">
+                        <div class="mas-opciones-texto">
+                            <strong>Más opciones de accesibilidad</strong>
+                            <span>Configura todas las opciones disponibles del sistema</span>
+                        </div>
+                        <span class="flecha">›</span>
+                    </a>
+
+                </div>
+            </div>    
+        </div>
+    <footer class="pie-pagina">
+        <div class="footer-barra-superior">
+            <nav class="navegacion-footer" aria-label="Navegación del pie de página">
+                <a href="#">Mapa web</a><a href="mailto:soporte.gidtiitec@uabcs.mx">Contacto</a><a href="#">Política de privacidad</a><a href="../../index.html">¿Qué es GIDTIITEC?</a>
+            </nav>
+        </div>
+        <div class="footer-contenido-principal">
+            <div class="footer-identidad">
+                <img src="../../assets/images/logos/gidtiitec-logo2.png" alt="Logo de GIDTIITEC">
+                <p>© GIDTIITEC - 2026</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../js/accessibility.js" defer></script>
+    <script src="../../js/lsm-player.js" defer></script>
+</body>
+</html>

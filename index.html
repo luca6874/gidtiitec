@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/accessibility.css">
     <link rel="stylesheet" href="css/pages/index.css">
+    <link rel="stylesheet" href="css/lsm-player.css">
     <title>GIDTIITEC</title>
 </head>
-<body>
+<body data-lsm-video="assets/videos/video inicio.mp4">
     <header class="encabezado">
         <div id="logos-header">
             <img src="assets/images/logos/GIDTIITEC-logo.webp" alt="Logo de grupo de investigacion en desarrollo de tecnologias inclusivas ">
@@ -23,7 +24,7 @@
         <a href="index.html">
             <img src="assets/images/iconos/inicio-icono.png" alt="" class="icono-nav"> Inicio
         </a>
-        <a href="#">
+        <a href="pages/help/ayuda.html">
             <img src="assets/images/iconos/ayuda-icono.png" alt="" class="icono-nav"> Ayuda
         </a>
         <a href="#">
@@ -193,6 +194,19 @@
             </ul>
         </section>
 
+        <button type="button" class="boton-lsm" aria-label="Activar reproductor de Lengua de Señas Mexicana" aria-expanded="false" aria-controls="reproductor-lsm">
+            LSM
+        </button>
+        <section id="reproductor-lsm" class="reproductor-lsm" aria-label="Video en Lengua de Señas Mexicana" aria-hidden="true" hidden>
+            <header class="reproductor-lsm-cabecera">
+                <h2>Lengua de Señas Mexicana</h2>
+                <div class="reproductor-lsm-acciones">
+                    <button type="button" class="lsm-pausa" aria-label="Reproducir video LSM">Reproducir</button>
+                    <button type="button" class="lsm-cerrar" aria-label="Cerrar reproductor LSM">Cerrar</button>
+                </div>
+            </header>
+            <video class="video-lsm" controls playsinline preload="none" aria-label="Interpretación de esta página en Lengua de Señas Mexicana"></video>
+        </section>
         <button type="button" class="boton-accesibilidad" aria-label="Abrir opciones de accesibilidad" aria-expanded="false" aria-controls="menu-accesibilidad">
             <img src="assets/images/iconos/icono-accesibilidad.png" alt="">
         </button>
@@ -345,5 +359,6 @@
         </div>
     </footer>
     <script src="js/accessibility.js" defer></script>
+    <script src="js/lsm-player.js" defer></script>
 </body>
 </html>
