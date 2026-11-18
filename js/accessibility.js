@@ -48,9 +48,9 @@
                     escala: [0.9, 1, 1.1, 1.25, 1.5, 1.75].includes(datos.escala)
                         ? datos.escala
                         : 1,
-                    tema: temasPermitidos.includes(datos.tema)
-                        ? datos.tema
-                        : "estandar"
+                    // El usuario puede elegir otros temas durante la sesión,
+                    // pero cada carga de página comienza en el modo estándar.
+                    tema: "estandar"
                 };
             }
 
@@ -134,7 +134,8 @@
 
             boton.classList.toggle("activo", seleccionado);
             boton.setAttribute("aria-checked", String(seleccionado));
-            boton.tabIndex = seleccionado ? 0 : -1;
+            // Cada perfil queda disponible con Tab además de las flechas.
+            boton.tabIndex = 0;
         });
 
         // Interruptores
@@ -239,7 +240,7 @@
 
         grupo.addEventListener("keydown", event => {
 
-            if (!["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp"].includes(event.key)) {
+            if (!["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp", "Home", "End"].includes(event.key)) {
                 return;
             }
 
@@ -252,6 +253,13 @@
             event.preventDefault();
 
             const actual = radios.indexOf(document.activeElement);
+            if (event.key === "Home" || event.key === "End") {
+                event.preventDefault();
+                const destino = event.key === "Home" ? radios[0] : radios[radios.length - 1];
+                destino.focus();
+                cambiarTema(destino.dataset.tema);
+                return;
+            }
             const direccion =
                 event.key === "ArrowRight" || event.key === "ArrowDown"
                     ? 1
@@ -329,10 +337,14 @@
         modalAccesibilidad &&
         botonCerrar
     ) {
+        let overflowAnterior = "";
 
         function abrirModal() {
 
+            overflowAnterior = document.body.style.overflow;
+
             menuAccesibilidad.hidden = false;
+            document.body.style.overflow = "hidden";
 
             botonAccesibilidad.setAttribute("aria-expanded", "true");
 
@@ -342,6 +354,7 @@
         function cerrarModal() {
 
             menuAccesibilidad.hidden = true;
+            document.body.style.overflow = overflowAnterior;
 
             botonAccesibilidad.setAttribute("aria-expanded", "false");
 

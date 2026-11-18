@@ -25,7 +25,7 @@
     background-color: var(--color-surface);
     color: var(--color-text);
     width: 100%;
-    max-width: 520px;
+    max-width: 490px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -53,7 +53,7 @@
 .modal-header {
     background-color: var(--color-primary);
     color: white;
-    padding: 22px 24px;
+    padding: 18px 20px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -100,10 +100,10 @@
 
 /* Cuerpo del Modal */
 .modal-body {
-    padding: 24px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
 }
 
 .accesibilidad-grupo {
@@ -433,7 +433,7 @@ html[data-modo-visual="monocromatico"] {
 
 /* Tipografía de lectura fácil */
 html[data-tipografia-legible="true"] body {
-    font-family: Arial, Verdana, sans-serif;
+    font-family: "Atkinson Hyperlegible", Arial, sans-serif;
 }
 
 html[data-tipografia-legible="true"] button,
@@ -443,7 +443,12 @@ html[data-tipografia-legible="true"] textarea,
 html[data-tipografia-legible="true"] h1,
 html[data-tipografia-legible="true"] h2,
 html[data-tipografia-legible="true"] h3 {
-    font-family: Arial, Verdana, sans-serif;
+    font-family: "Lexend", "Atkinson Hyperlegible", sans-serif;
+}
+
+html[data-tipografia-legible="true"] :focus-visible {
+    outline: 3px solid #005fcc;
+    outline-offset: 3px;
 }
 
 /* Subrayar enlaces */
