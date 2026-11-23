@@ -1,0 +1,165 @@
+/* Página de inicio de sesión */
+body:has(.login-wrapper) {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lexend', Arial, sans-serif;
+}
+
+body:has(.login-wrapper) .encabezado {
+    flex: 0 0 auto;
+    min-height: 78px;
+    padding: 8px clamp(20px, 4.5vw, 64px);
+}
+
+body:has(.login-wrapper) #logos-header { gap: 24px; }
+body:has(.login-wrapper) #logos-header img:first-child { width: 48px; height: 58px; }
+body:has(.login-wrapper) #logos-header img:nth-child(2) { width: 112px; height: 58px; }
+body:has(.login-wrapper) .navegacion-principal { gap: clamp(12px, 2vw, 30px); }
+body:has(.login-wrapper) .navegacion-principal a { font-size: 12px; }
+body:has(.login-wrapper) .navegacion-principal .icono-nav { width: 13px; height: 13px; object-fit: contain; }
+body:has(.login-wrapper) .navegacion-principal .btn-login { padding: 9px 15px; }
+
+.login-wrapper {
+    flex: 1 0 auto;
+    width: 100%;
+    display: block;
+    min-height: 490px;
+}
+
+.login-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    min-height: 490px;
+}
+
+.login-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: clamp(32px, 5vw, 64px);
+    color: #fff;
+    background: linear-gradient(125deg, rgba(0, 36, 107, .78), rgba(38, 91, 155, .70)),
+        url('../../assets/images/fondos/imagen-login.png') center / cover no-repeat;
+}
+
+.login-hero::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 8% 5% 7%;
+    background: url('../../assets/images/logos/GIDTIITEC-gris.png') center / contain no-repeat;
+    opacity: .19;
+    mix-blend-mode: screen;
+    pointer-events: none;
+}
+
+.login-hero-contenido { max-width: 440px; display: flex; flex-direction: column; gap: 14px; }
+.login-institucion { font-size: 12px; letter-spacing: .025em; font-weight: 400; }
+.login-hero h1 {
+    margin: 0;
+    max-width: 420px;
+    color: #fff;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(34px, 4vw, 48px);
+    font-weight: 600;
+    line-height: 1.08;
+}
+.login-hero p { margin: 16px 0 0; max-width: 410px; color: rgba(255,255,255,.94); font-size: 14px; line-height: 1.55; }
+
+.login-panel { display: flex; align-items: stretch; justify-content: center; padding: 24px 28px; background: #f4f6f8; }
+.login-form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    padding: 27px clamp(20px, 3vw, 34px) 25px;
+    border: 1px solid #1644b1;
+    background: #fff;
+}
+.campo-grupo { display: flex; flex-direction: column; gap: 5px; }
+.campo-grupo label { color: #263244; font-size: 14px; font-weight: 600; }
+.campo-grupo input {
+    width: 100%; height: 52px; padding: 0 13px;
+    border: 1px solid #d3d8df; border-radius: 5px;
+    color: #263244; background: #fff; font: 400 13px 'Lexend', Arial, sans-serif;
+    box-sizing: border-box; transition: border-color .2s, box-shadow .2s;
+}
+.campo-grupo input::placeholder { color: #71809a; opacity: 1; }
+.campo-grupo input:focus { outline: 0; border-color: #1644b1; box-shadow: 0 0 0 3px rgba(22,68,177,.12); }
+.input-password-wrapper { position: relative; display: flex; align-items: center; }
+.input-password-wrapper input { padding-right: 46px; }
+.btn-toggle-password {
+    position: absolute; right: 8px; width: 34px; height: 34px; padding: 0;
+    display: grid; place-items: center; color: #263244; background: transparent; border: 0; border-radius: 4px;
+    font-size: 0;
+}
+.btn-toggle-password:hover { background: #f0f3f8; }
+.btn-toggle-password::before {
+    content: ''; width: 18px; height: 18px;
+    background: url('../../assets/images/iconos/ojo-icono.png') center / contain no-repeat;
+}
+.btn-toggle-password::after { content: none; }
+.btn-login-submit {
+    width: min(100%, 390px); min-height: 44px; margin: auto auto 0; padding: 10px 20px;
+    color: #fff; background: #1c46b5; border: 0; border-radius: 5px;
+    font: 500 14px 'Lexend', Arial, sans-serif; cursor: pointer; transition: background .2s;
+}
+.btn-login-submit:hover { background: #00246b; }
+.login-registro {
+    width: min(100%, 390px); min-height: 35px; margin: -4px auto 0; padding: 8px 10px;
+    border: 1px solid #c8c8c8; border-radius: 5px; text-align: center; color: #263244; font-size: 12px;
+}
+.login-registro a { color: #0878e8; font-weight: 500; }
+.login-registro a:hover { text-decoration: underline; }
+.login-wrapper .boton-accesibilidad {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: #00246b;
+    box-shadow: 0 4px 12px rgba(0,0,0,.25);
+    transition: transform .2s ease, background-color .2s ease;
+}
+.login-wrapper .boton-accesibilidad:hover { transform: scale(1.08); background: #245cb5; }
+.login-wrapper .boton-accesibilidad:focus-visible { outline: 3px solid #f0b429; outline-offset: 3px; }
+.login-wrapper .boton-accesibilidad img { display: block; width: 28px; height: 28px; object-fit: contain; }
+
+body:has(.login-wrapper) .pie-pagina { flex: 0 0 auto; }
+body:has(.login-wrapper) .footer-barra-superior { padding: 11px clamp(20px, 4.5vw, 64px); }
+body:has(.login-wrapper) .navegacion-footer { gap: clamp(20px, 4vw, 46px); }
+body:has(.login-wrapper) .navegacion-footer a { font-size: 12px; }
+body:has(.login-wrapper) .footer-contenido-principal { padding: 16px clamp(20px, 4.5vw, 64px); }
+body:has(.login-wrapper) .footer-identidad img { width: 48px; height: 42px; }
+body:has(.login-wrapper) .footer-redes p { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: 18px; }
+body:has(.login-wrapper) #redes img { width: 22px; height: 22px; }
+
+@media (min-height: 850px) {
+    .login-grid, .login-wrapper { min-height: min(62vh, 700px); }
+}
+@media (max-width: 760px) {
+    body:has(.login-wrapper) .encabezado { gap: 10px; padding: 10px 16px; }
+    body:has(.login-wrapper) #logos-header img:first-child { height: 48px; width: 42px; }
+    body:has(.login-wrapper) #logos-header img:nth-child(2) { height: 48px; width: 88px; }
+    body:has(.login-wrapper) .navegacion-principal { flex-wrap: wrap; justify-content: center; gap: 8px 14px; }
+    body:has(.login-wrapper) .navegacion-principal a { font-size: 11px; }
+    .login-wrapper, .login-grid { min-height: 0; }
+    .login-grid { grid-template-columns: 1fr; }
+    .login-hero { min-height: 280px; padding: 36px 28px; }
+    .login-hero h1 { font-size: clamp(34px, 9vw, 44px); }
+    .login-panel { padding: 20px 16px; }
+    .login-form { min-height: 340px; padding: 24px 20px; }
+    .login-wrapper .boton-accesibilidad { right: 16px; bottom: 16px; }
+}

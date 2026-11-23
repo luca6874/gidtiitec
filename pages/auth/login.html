@@ -6,11 +6,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <title>GIDTIITEC login</title>
     <link rel="stylesheet" href="../../css/global.css">
     <link rel="stylesheet" href="../../css/components.css">
     <link rel="stylesheet" href="../../css/accessibility.css">
-    <link rel="stylesheet" href="../../css/pages/accesibilidad.css">
+    <link rel="stylesheet" href="../../css/pages/login.css">
+
+    
+    
+
+    
 </head>
 <body>
      <header class="encabezado">
@@ -31,6 +37,238 @@
             <a href="../../pages/auth/login.html" class="btn-login">Iniciar Sesión</a>
         </nav>
     </header>
+    <main class="login-wrapper">
+        <div class="login-grid">
+            <section class="login-hero" aria-label="Bienvenida institucional">
+                <div class="login-hero-contenido">
+                    <span class="login-institucion">
+                        Universidad Autónoma de Baja California Sur
+                    </span>
+                    <h1>
+                        Bienvenido a GIDTIITEC
+                    </h1>
+                    <p>
+                        Conecta con proyectos de tecnología e inclusión de tu comunidad universitaria
+                    </p>
+
+                </div>
+
+            </section>
+            <section class="login-panel" aria-labelledby="titulo-login">
+                <form class="login-form" action="#" method="post">
+                    <h2 id="titulo-login" class="sr-only">
+                        Inicio de sesión
+                    </h2>
+                    <div class="campo-grupo">
+                        <label for="correo-universitario">
+                            Correo universitario
+                        </label>
+                        <input 
+                            type="email"
+                            id="correo-universitario"
+                            name="correo"
+                            placeholder="nombre@universidad.mx"
+                            autocomplete="username"
+                            required
+                        >
+                    </div>
+                    <div class="campo-grupo">
+                        <label for="password-login">
+                            Contraseña
+                        </label>
+                        <div class="input-password-wrapper">
+                            <input 
+                                type="password"
+                                id="password-login"
+                                name="password"
+                                placeholder="Introduce tu contraseña"
+                                autocomplete="current-password"
+                                required
+                            >
+                            <button 
+                                type="button"
+                                class="btn-toggle-password"
+                                aria-label="Mostrar u ocultar contraseña"
+                                aria-pressed="false"
+                            >
+                                👁
+                            </button>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-login-submit">
+                        Iniciar sesión
+                    </button>
+                    <p class="login-registro">
+                        ¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a>
+                    </p>
+                </form>
+            </section>
+
+        </div>
+        <button type="button" class="boton-accesibilidad" aria-label="Abrir opciones de accesibilidad" aria-expanded="false" aria-controls="menu-accesibilidad">
+            <img src="../../assets/images/iconos/icono-accesibilidad.png" alt="">
+        </button>
+        <div id="menu-accesibilidad" class="modal-accesibilidad-overlay" hidden>
+            <div class="modal-accesibilidad" role="dialog" aria-modal="true" aria-labelledby="titulo-accesibilidad"  tabindex="-1">
+                
+                <!-- Cabecera del Modal -->
+                <header class="modal-header">
+                    <div class="modal-header-info">
+                        <img src="../../assets/images/iconos/icono-accesibilidad.png" alt="" class="modal-icono">
+                        <div>
+                            <h2 id="titulo-accesibilidad">Accesibilidad</h2>
+                            <p>Ajustes visuales y de lectura para el portal universitario</p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-cerrar-modal" aria-label="Cerrar opciones de accesibilidad">
+                        ✕
+                    </button>
+                </header>
+
+                <!-- Cuerpo del Modal -->
+                <div class="modal-body">
+                        
+                    <!-- 1. Tamaño del texto -->
+                    <section class="accesibilidad-grupo">
+                        <div class="grupo-encabezado">
+                            <img src="../../assets/images/iconos/tamtexto-icono.png" alt="" class="icono-seccion">
+                            <h3 class="grupo-titulo">
+                                Tamaño del texto
+                            </h3>
+                            <span class="badge-predeterminado">
+                                100% (Predeterminado)
+                            </span>
+                        </div>
+                        <div class="botones-tamano" role="group" aria-label="Tamaño del texto">
+                            <button type="button" class="btn-tamano" data-escala="0.9" aria-pressed="false">
+                                A -
+                            </button>
+                            <button type="button" class="btn-tamano activo" data-escala="1" aria-pressed="true">
+                                A •
+                            </button>
+                            <button type="button" class="btn-tamano" data-escala="1.25" aria-pressed="false">
+                                A +
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- 2. Modo de visualización -->
+                    <section class="accesibilidad-grupo">
+                        <div class="grupo-encabezado">
+                            <img src="../../assets/images/iconos/tema-icono.png" alt="" class="icono-seccion">
+                            <h3 class="grupo-titulo">
+                                Modo de visualización
+                            </h3>
+                        </div>
+                        
+                        <div class="grid-modos" role="radiogroup" aria-label="Modo de visualización">
+                            <button type="button" role="radio" data-tema="estandar" aria-checked="true" class="modo-card activo">
+                                <span class="radio-circulo"></span>
+                                <span class="modo-texto">
+                                    Estándar
+                                </span>
+                            </button>
+                            <button type="button" role="radio" data-tema="contraste-claro" aria-checked="false" class="modo-card">
+                                <span class="radio-circulo"></span>
+                                <span class="modo-texto">
+                                    Contraste claro
+                                </span>
+                            </button>
+                            <button type="button" role="radio" data-tema="contraste-oscuro" aria-checked="false" class="modo-card">
+                                <span class="radio-circulo"></span>
+                                <span class="modo-texto">
+                                    Contraste oscuro
+                                </span>
+                            </button>
+                            <button type="button" role="radio" data-tema="monocromatico" aria-checked="false" class="modo-card">
+                                <span class="radio-circulo"></span>
+                                <span class="modo-texto">
+                                    Monocromático
+                                </span>
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- 3. Opciones de lectura / enlaces -->
+                    <div class="accesibilidad-opciones">
+                        <label class="opcion-checkbox">
+                            <div class="opcion-info">
+                                <img src="../../assets/images/iconos/icono-subrayar.png" alt="" class="icono-seccion">
+                                <span>Subrayar todos los enlaces</span>
+                            </div>
+                            <input type="checkbox" data-preferencia="subrayar-enlaces">
+                        </label>
+                        
+                        <label class="opcion-checkbox">
+                            <div class="opcion-info">
+                                <img src="../../assets/images/iconos/icono-libro.png" alt="" class="icono-seccion">
+                                <span>Tipografía para lectura fácil</span>
+                            </div>
+                            <input type="checkbox" data-preferencia="tipografia-legible">
+                        </label>
+                    </div>
+
+                    <!-- 4. Enlace a Más opciones -->
+                    <a href="../accessibility/accesibilidad.html" class="enlace-mas-opciones">
+                        <div class="mas-opciones-texto">
+                            <strong>Más opciones de accesibilidad</strong>
+                            <span>Configura todas las opciones disponibles del sistema</span>
+                        </div>
+                        <span class="flecha">›</span>
+                    </a>
+
+                </div>
+            </div>    
+        </div>
+        
+    </main>
+     <footer class="pie-pagina">
+        <div class="footer-barra-superior">
+
+            <nav  class="navegacion-footer" aria-label="Navegación del pie de página">
+                <a href="">Mapa web</a>
+                <a href="">Contacto</a>
+                <a href="">Politica de privacidad</a>
+                <a href="">¿Qué es GIDTIITEC?</a>
+            </nav>
+        </div>
+        <div class="footer-contenido-principal">
+
+            <div class="footer-identidad">
+                <img src="../../assets/images/logos/gidtiitec-logo2.png" alt="Logo de GIDTIITEC">
+                <p>
+                    © GIDTIITEC - 2026
+                </p>
+            </div>
+            <div class="footer-redes">
+                <p>
+                    Siguenos
+                </p>
+                <div id="redes">
+                    <a href="https://www.facebook.com/gidtiitec" aria-label="Visitar facebook de GIDTIITEC" target="_blank" rel="noopener noreferrer">
+                        <img src="../../assets/images/logos/facebook-logo.png" alt="Logo de facebook">
+                    </a>
+
+                    <a href="" aria-label="Visitar instagram de GIDTIITEC" target="_blank" rel="noopener noreferrer">
+                        <img src="../../assets/images/logos/instagram-logo.png" alt="Logo de instagram">
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
     
+    <script>
+        const campoPassword = document.getElementById('password-login');
+        const botonPassword = document.querySelector('.btn-toggle-password');
+
+        botonPassword.addEventListener('click', () => {
+            const mostrar = campoPassword.type === 'password';
+            campoPassword.type = mostrar ? 'text' : 'password';
+            botonPassword.setAttribute('aria-pressed', String(mostrar));
+            botonPassword.setAttribute('aria-label', mostrar ? 'Ocultar contraseña' : 'Mostrar contraseña');
+        });
+    </script>
+    <script src="../../js/accessibility.js" defer></script>
 </body>
 </html>

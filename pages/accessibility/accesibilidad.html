@@ -41,7 +41,7 @@
    <nav class="migas-pan" aria-label="Ruta de navegación">
         <a href="../../index.html">Inicio</a>
         <span aria-hidden="true">&gt;</span>
-        <span aria-current="page">Accesibilidad</span>
+        <span id="breadcrumb-current" aria-current="page">Accesibilidad</span>
     </nav>
 
     <!-- Cabecera de la sección -->
@@ -295,6 +295,25 @@
             </div>
         </div>
     </footer>
+    <script>
+        (() => {
+            const actual = document.getElementById('breadcrumb-current');
+            const actualizarRuta = () => {
+                const segmento = window.location.pathname.split('/').filter(Boolean).pop() || 'index';
+                const pagina = decodeURIComponent(segmento).replace(/\.html?$/i, '').toLowerCase();
+                const nombres = {
+                    accesibilidad: 'Accesibilidad',
+                    ayuda: 'Ayuda',
+                    login: 'Iniciar sesión',
+                    index: 'Inicio'
+                };
+                if (actual) actual.textContent = nombres[pagina] || pagina.replace(/[-_]/g, ' ');
+            };
+
+            actualizarRuta();
+            window.addEventListener('popstate', actualizarRuta);
+        })();
+    </script>
     <script src="../../js/accessibility.js" defer></script>
 </body>
 
