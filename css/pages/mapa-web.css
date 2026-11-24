@@ -1,0 +1,173 @@
+/* =====================================
+   MAPA WEB (VISITANTE)
+===================================== */
+
+body {
+    background-color: #f7f8fc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.pagina-mapa-web {
+    flex: 1;
+    width: min(1040px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 20px 0 64px;
+}
+
+/* Breadcrumbs y Volver */
+.ruta-mapa {
+    margin-bottom: 14px;
+}
+
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.breadcrumbs li + li::before {
+    content: "/";
+    margin-right: 8px;
+    color: #9aa5b4;
+}
+
+.btn-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.btn-volver:hover {
+    text-decoration: underline;
+}
+
+/* Título principal */
+.titulo-mapa-web {
+    margin: 0 0 36px 0;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.2vw, 2.5rem);
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+/* Contenedor exterior celeste y tarjeta interior */
+.mapa-contenedor-exterior {
+    background-color: #eef3fc;
+    border: 1px solid #dce5f5;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.mapa-tarjeta {
+    background-color: #f8f9fc;
+    border: 1px solid #d5dbe5;
+    min-height: 320px;
+    padding: 32px 36px;
+}
+
+/* Lista jerárquica de enlaces */
+.lista-mapa-nivel-1,
+.lista-mapa-nivel-2,
+.lista-mapa-nivel-3 {
+    list-style-type: disc;
+    margin: 0;
+    padding-left: 24px;
+}
+
+.lista-mapa-nivel-2,
+.lista-mapa-nivel-3 {
+    margin-top: 6px;
+}
+
+.mapa-tarjeta li {
+    margin-bottom: 6px;
+    color: var(--color-secondary);
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.mapa-tarjeta a {
+    color: var(--color-secondary);
+    transition: color 0.2s ease;
+}
+
+.mapa-tarjeta a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* Botón flotante de accesibilidad */
+.boton-accesibilidad {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.boton-accesibilidad img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+/* Soporte para Alto Contraste Oscuro */
+html[data-modo-visual="contraste-oscuro"] body {
+    background-color: #000000;
+}
+
+html[data-modo-visual="contraste-oscuro"] .mapa-contenedor-exterior {
+    background-color: #111111;
+    border-color: #777777;
+}
+
+html[data-modo-visual="contraste-oscuro"] .mapa-tarjeta {
+    background-color: #171717;
+    border-color: #777777;
+}
+
+html[data-modo-visual="contraste-oscuro"] .mapa-tarjeta li,
+html[data-modo-visual="contraste-oscuro"] .mapa-tarjeta a,
+html[data-modo-visual="contraste-oscuro"] .btn-volver,
+html[data-modo-visual="contraste-oscuro"] .breadcrumbs {
+    color: var(--color-accent);
+}
+
+html[data-modo-visual="contraste-oscuro"] .boton-accesibilidad {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+html[data-modo-visual="contraste-oscuro"] .boton-accesibilidad img {
+    filter: brightness(0);
+}
+
+@media (max-width: 600px) {
+    .mapa-contenedor-exterior {
+        padding: 12px;
+    }
+
+    .mapa-tarjeta {
+        padding: 20px;
+    }
+}
