@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/accessibility.css">
+    <link rel="stylesheet" href="../../css/pages/miembros.css">
+    <title>Directorio de Miembros - GIDTIITEC</title>
+</head>
+<body>
+    <header class="encabezado">
+        <div id="logos-header">
+            <img src="../../assets/images/logos/GIDTIITEC-logo.webp" alt="Logo de grupo de investigación en desarrollo de tecnologías inclusivas">
+            <img src="../../assets/images/logos/dasc-logo.png" alt="Logo del departamento académico de sistemas computacionales">
+        </div>
+        <nav class="navegacion-principal" aria-label="Navegación principal">
+            <a href="../../index.html">
+                <img src="../../assets/images/iconos/inicio-icono.png" alt="" class="icono-nav"> Inicio
+            </a>
+            <a href="../help/ayuda.html">
+                <img src="../../assets/images/iconos/ayuda-icono.png" alt="" class="icono-nav"> Ayuda
+            </a>
+            <a href="miembros.html" aria-current="page">
+                <img src="../../assets/images/iconos/miembros-icono.png" alt="" class="icono-nav"> Miembros
+            </a>
+            <a href="../auth/login.html" class="btn-login">Iniciar Sesión</a>
+        </nav>
+    </header>
+
+    <main id="contenido-principal" class="pagina-directorio" tabindex="-1">
+        <!-- Ruta de navegación -->
+        <nav aria-label="Ruta de navegación" class="ruta-directorio">
+            <ol class="breadcrumbs">
+                <li><a href="../../index.html">WEB</a></li>
+                <li>Organización</li>
+                <li aria-current="page">Miembros</li>
+            </ol>
+            <a href="../../index.html" class="btn-volver">← Volver</a>
+        </nav>
+
+        <!-- Encabezado de la página -->
+        <header class="encabezado-directorio">
+            <div>
+                <h1>Miembros de la Organización</h1>
+                <p>Conoce al equipo que conecta el conocimiento, la tecnología y la comunidad universitaria.</p>
+            </div>
+            <span class="badge-comunidad">Comunidad universitaria</span>
+        </header>
+
+        <!-- Buscador y filtros -->
+        <section class="barra-filtros-miembros" aria-label="Buscar y filtrar miembros">
+            <form role="search" class="busqueda-miembros">
+                <label for="buscar-miembro" class="sr-only">Buscar por nombre o especialidad</label>
+                <img src="../../assets/images/iconos/buscar-icono.png" alt="" class="icono-lupa">
+                <input type="search" id="buscar-miembro" name="busqueda" placeholder="Buscar por nombre o especialidad">
+            </form>
+
+            <div class="filtros-selects">
+                <select aria-label="Filtrar por rol" class="select-filtro">
+                    <option value="">Rol</option>
+                    <option value="jefe">Jefe de departamento</option>
+                    <option value="docente">Docente e investigador</option>
+                    <option value="diseno">Diseñadora de experiencia</option>
+                    <option value="desarrollo">Desarrollador de software</option>
+                </select>
+
+                <select aria-label="Filtrar por departamento" class="select-filtro">
+                    <option value="">Departamento</option>
+                    <option value="investigacion">Investigación e Innovación</option>
+                    <option value="sistemas">Ingeniería de Sistemas</option>
+                    <option value="diseno">Diseño y Comunicación</option>
+                    <option value="ti">Tecnologías de la Información</option>
+                </select>
+
+                <select aria-label="Filtrar por proyecto" class="select-filtro">
+                    <option value="">Proyecto</option>
+                    <option value="campus">Campus sin barreras</option>
+                    <option value="aulas">Aulas para aprender juntos</option>
+                    <option value="voces">Voces del campus</option>
+                    <option value="mentorias">Red de mentorías pares</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Contador y ordenamiento -->
+        <div class="barra-resultados">
+            <p class="total-miembros"><strong>24 miembros</strong> en la organización</p>
+            <div class="ordenar-por">
+                <label for="orden-miembros">Ordenar por:</label>
+                <select id="orden-miembros">
+                    <option value="relevancia">Relevancia</option>
+                    <option value="nombre-asc">Nombre (A–Z)</option>
+                    <option value="nombre-desc">Nombre (Z–A)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Rejilla de 8 miembros -->
+        <section aria-label="Lista de miembros">
+            <ul class="grid-miembros">
+                <!-- 1 -->
+                <li>
+                    <article class="tarjeta-dir-miembro">
+                        <div class="tarjeta-dir-top">
+                            <span class="avatar-dir" aria-hidden="true">JA</span>
+                            <div>
+                                <h2>Jesús Andrés Sandoval Bringas</h2>
+                                <p class="rol-miembro">Jefe de departamento</p>
+                            </div>
+                        </div>
+                        <p class="depto-miembro">Investigación e Innovación</p>
+                        <ul class="tags-miembro">
+                            <li>Accesibilidad</li>
+                            <li>UX Research</li>
+                        </ul>
+                        <div class="tarjeta-dir-footer">
+                            <span class="proyecto-miembro">📁 Campus sin barreras</span>
+                            <a href="detalle-miembro.html" class="link-perfil">Ver perfil ↗</a>
+                        </div>
+                    </article>
+                </li>
+
+                <!-- 2 -->
+                <li>
+                    <article class="tarjeta-dir-miembro">
+                        <div class="tarjeta-dir-top">
+                            <span class="avatar-dir" aria-hidden="true">FA</span>
+                            <div>
+                                <h2>Francisco Javier Álvarez Rodríguez</h2>
+                                <p class="rol-miembro">Docente e investigador</p>
+                            </div>
+                        </div>
+                        <p class="depto-miembro">Ingeniería de Sistemas</p>
+                        <ul class="tags-miembro">
+                            <li>Python</li>
+                            <li>Inteligencia artificial</li>
+                        </ul>
+                        <div class="tarjeta-dir-footer">
+                            <span class="proyecto-miembro">📁 Aulas para aprender juntos</span>
+                            <a href="detalle-miembro.html" class="link-perfil">Ver perfil ↗</a>
+                        </div>
+                    </article>
+                </li>
+
+                <!-- 3 -->
+                <li>
+                    <article class="tarjeta-dir-miembro">
+                        <div class="tarjeta-dir-top">
+                            <span class="avatar-dir" aria-hidden="true">CT</span>
+                            <div>
+                                <h2>Charito Távara Sabalú</h2>
+                                <p class="rol-miembro">Diseñadora de experiencia</p>
+                            </div>
+                        </div>
+                        <p class="depto-miembro">Diseño y Comunicación</p>
+                        <ul class="tags-miembro">
+                            <li>Figma</li>
+                            <li>Diseño inclusivo</li>
+                        </ul>
+                        <div class="tarjeta-dir-footer">
+                            <span class="proyecto-miembro">📁 Voces del campus</span>
+                            <a href="detalle-miembro.html" class="link-perfil">Ver perfil ↗</a>
+                        </div>
+                    </article>
+                </li>
+
+                <!-- 4 -->
+                <li>
+                    <article class="tarjeta-dir-miembro">
+                        <div class="tarjeta-dir-top">
+                            <span class="avatar-dir" aria-hidden="true">YC</span>
+                            <div>
+                                <h2>Yolanda Camacho González</h2>
+                                <p class="rol-miembro">Desarrollador de software</p>
+                            </div>
+                        </div>
+                        <p class="depto-miembro">Tecnologías de la Información</p>
+                        <ul class="tags-miembro">
+                            <li>React</li>
+                            <li>Node.js</li>
+                        </ul>
+                        <div class="tarjeta-dir-footer">
+                            <span class="proyecto-miembro">📁 Campus sin barreras</span>
+                            <a href="detalle-miembro.html" class="link-perfil">Ver perfil ↗</a>
+                        </div>
+                    </article>
+                </li>
+
+                <!-- 5 -->
+                <li>
+                    <article class="tarjeta-dir-miembro">
+                        <div class="tarjeta-dir-top">
+                            <span class="avatar-dir" aria-hidden="true">LF</span>
+                            <div>
+                                <h2>Lucía Fernández</h2>
+                                <p class="rol-miembro">Docente y mentora</p>
+                            </div>
+                        </div>
+                        <p class="depto-miembro">Ciencias de la Educación</p>
+                        <ul class="tags-miembro">
+                            <li>Mentoría</li>
+                            <li>Innovación educativa</li>
+                        </ul>
+                        <div class="tarjeta-dir-footer">
+                            <span class="proyecto-miembro">📁 Red de mentorías pares</span>
+                            <a href="detalle-miembro.html" class="link-perfil">Ver perfil ↗</a>
+                        </div>
+                    </article>
+                </li>
+
+                <!-- 6 -->
+                <li>
+                    <article class="tarjeta-dir-miembro">
+                        <div class="tarjeta-dir-top">
+                            <span class="avatar-dir" aria-hidden="true">JT</span>
+                            <div>
+                                <h2>Javier Torres</h2>
+                                <p class="rol-miembro">Analista de datos</p>
+                            </div>
+                        </div>
+                        <p class="depto-miembro">Investigación e Innovación</p>
+                        <ul class="tags-miembro">
+                            <li>Power BI</li>
+                            <li>Análisis de datos</li>
+                        </ul>
+                        <div class="tarjeta-dir-footer">
+                            <span class="proyecto-miembro">📁 Observatorio universitario</span>
+                            <a href="detalle-miembro.html" class="link-perfil">Ver perfil ↗</a>
+                        </div>
+                    </article>
+                </li>
+
+                <!-- 7 -->
+                <li>
+                    <article class="tarjeta-dir-miembro">
+                        <div class="tarjeta-dir-top">
+                            <span class="avatar-dir" aria-hidden="true">SH</span>
+                            <div>
+                                <h2>Sofía Herrera</h2>
+                                <p class="rol-miembro">Gestora de proyectos</p>
+                            </div>
+                        </div>
+                        <p class="depto-miembro">Vinculación con la Comunidad</p>
+                        <ul class="tags-miembro">
+                            <li>Gestión ágil</li>
+                            <li>Participación</li>
+                        </ul>
+                        <div class="tarjeta-dir-footer">
+                            <span class="proyecto-miembro">📁 Voces del campus</span>
+                            <a href="detalle-miembro.html" class="link-perfil">Ver perfil ↗</a>
+                        </div>
+                    </article>
+                </li>
+
+                <!-- 8 -->
+                <li>
+                    <article class="tarjeta-dir-miembro">
+                        <div class="tarjeta-dir-top">
+                            <span class="avatar-dir" aria-hidden="true">PR</span>
+                            <div>
+                                <h2>Pablo Ruiz</h2>
+                                <p class="rol-miembro">Investigador en formación</p>
+                            </div>
+                        </div>
+                        <p class="depto-miembro">Ingeniería de Sistemas</p>
+                        <ul class="tags-miembro">
+                            <li>IoT</li>
+                            <li>Tecnología educativa</li>
+                        </ul>
+                        <div class="tarjeta-dir-footer">
+                            <span class="proyecto-miembro">📁 Aulas para aprender juntos</span>
+                            <a href="detalle-miembro.html" class="link-perfil">Ver perfil ↗</a>
+                        </div>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Paginación -->
+        <nav class="paginacion-directorio" aria-label="Paginación de miembros">
+            <p>Mostrando 1–8 de 24 miembros</p>
+            <div class="controles-pagina">
+                <button type="button" class="btn-pag" disabled>‹ Anterior</button>
+                <button type="button" class="btn-pag activo" aria-current="page">1</button>
+                <button type="button" class="btn-pag">2</button>
+                <button type="button" class="btn-pag">3</button>
+                <button type="button" class="btn-pag">Siguiente ›</button>
+            </div>
+        </nav>
+
+        <!-- Botón y modal de accesibilidad -->
+        <button type="button" class="boton-accesibilidad" aria-label="Abrir opciones de accesibilidad" aria-expanded="false" aria-controls="menu-accesibilidad">
+            <img src="../../assets/images/iconos/icono-accesibilidad.png" alt="">
+        </button>
+
+        <div id="menu-accesibilidad" class="modal-accesibilidad-overlay" hidden>
+            <div class="modal-accesibilidad" role="dialog" aria-modal="true" aria-labelledby="titulo-accesibilidad" tabindex="-1">
+                <header class="modal-header">
+                    <div class="modal-header-info">
+                        <img src="../../assets/images/iconos/icono-accesibilidad.png" alt="" class="modal-icono">
+                        <div>
+                            <h2 id="titulo-accesibilidad">Accesibilidad</h2>
+                            <p>Ajustes visuales y de lectura para el portal universitario</p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-cerrar-modal" aria-label="Cerrar opciones de accesibilidad">✕</button>
+                </header>
+                <div class="modal-body">
+                    <section class="accesibilidad-grupo">
+                        <div class="grupo-encabezado">
+                            <img src="../../assets/images/iconos/tamtexto-icono.png" alt="" class="icono-seccion">
+                            <h3 class="grupo-titulo">Tamaño del texto</h3>
+                            <span class="badge-predeterminado">100% (Predeterminado)</span>
+                        </div>
+                        <div class="botones-tamano" role="group" aria-label="Tamaño del texto">
+                            <button type="button" class="btn-tamano" data-escala="0.9" aria-pressed="false">A -</button>
+                            <button type="button" class="btn-tamano activo" data-escala="1" aria-pressed="true">A •</button>
+                            <button type="button" class="btn-tamano" data-escala="1.25" aria-pressed="false">A +</button>
+                        </div>
+                    </section>
+                    <section class="accesibilidad-grupo">
+                        <div class="grupo-encabezado">
+                            <img src="../../assets/images/iconos/tema-icono.png" alt="" class="icono-seccion">
+                            <h3 class="grupo-titulo">Modo de visualización</h3>
+                        </div>
+                        <div class="grid-modos" role="radiogroup" aria-label="Modo de visualización">
+                            <button type="button" role="radio" data-tema="estandar" aria-checked="true" class="modo-card activo">
+                                <span class="radio-circulo"></span><span class="modo-texto">Estándar</span>
+                            </button>
+                            <button type="button" role="radio" data-tema="contraste-claro" aria-checked="false" class="modo-card">
+                                <span class="radio-circulo"></span><span class="modo-texto">Contraste claro</span>
+                            </button>
+                            <button type="button" role="radio" data-tema="contraste-oscuro" aria-checked="false" class="modo-card">
+                                <span class="radio-circulo"></span><span class="modo-texto">Contraste oscuro</span>
+                            </button>
+                            <button type="button" role="radio" data-tema="monocromatico" aria-checked="false" class="modo-card">
+                                <span class="radio-circulo"></span><span class="modo-texto">Monocromático</span>
+                            </button>
+                        </div>
+                    </section>
+                    <div class="accesibilidad-opciones">
+                        <label class="opcion-checkbox">
+                            <div class="opcion-info">
+                                <img src="../../assets/images/iconos/icono-subrayar.png" alt="" class="icono-seccion">
+                                <span>Subrayar todos los enlaces</span>
+                            </div>
+                            <input type="checkbox" data-preferencia="subrayar-enlaces">
+                        </label>
+                        <label class="opcion-checkbox">
+                            <div class="opcion-info">
+                                <img src="../../assets/images/iconos/icono-libro.png" alt="" class="icono-seccion">
+                                <span>Tipografía para lectura fácil</span>
+                            </div>
+                            <input type="checkbox" data-preferencia="tipografia-legible">
+                        </label>
+                    </div>
+                    <a href="../accessibility/accesibilidad.html" class="enlace-mas-opciones">
+                        <div class="mas-opciones-texto">
+                            <strong>Más opciones de accesibilidad</strong>
+                            <span>Configura todas las opciones disponibles del sistema</span>
+                        </div>
+                        <span class="flecha">›</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="footer-barra-superior">
+            <nav class="navegacion-footer" aria-label="Navegación del pie de página">
+                <a href="">Mapa web</a>
+                <a href="">Contacto</a>
+                <a href="">Política de privacidad</a>
+                <a href="">¿Qué es GIDTIITEC?</a>
+            </nav>
+        </div>
+        <div class="footer-contenido-principal">
+            <div class="footer-identidad">
+                <img src="../../assets/images/logos/gidtiitec-logo2.png" alt="Logo de GIDTIITEC">
+                <p>© GIDTIITEC - 2026</p>
+            </div>
+            <div class="footer-redes">
+                <p>Síguenos</p>
+                <div id="redes">
+                    <a href="https://www.facebook.com/gidtiitec" aria-label="Visitar facebook de GIDTIITEC" target="_blank" rel="noopener noreferrer">
+                        <img src="../../assets/images/logos/facebook-logo.png" alt="Logo de facebook">
+                    </a>
+                    <a href="" aria-label="Visitar instagram de GIDTIITEC" target="_blank" rel="noopener noreferrer">
+                        <img src="../../assets/images/logos/instagram-logo.png" alt="Logo de instagram">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/accessibility.js" defer></script>
+</body>
+</html>
