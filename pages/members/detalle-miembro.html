@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/accessibility.css">
+    <link rel="stylesheet" href="../../css/pages/detalle-miembro.css">
+    <title>Jesús Andrés Sandoval Bringas - GIDTIITEC</title>
+</head>
+<body>
+    <header class="encabezado">
+        <div id="logos-header">
+            <img src="../../assets/images/logos/GIDTIITEC-logo.webp" alt="Logo de grupo de investigación en desarrollo de tecnologías inclusivas">
+            <img src="../../assets/images/logos/dasc-logo.png" alt="Logo del departamento académico de sistemas computacionales">
+        </div>
+        <nav class="navegacion-principal" aria-label="Navegación principal">
+            <a href="../../index.html">
+                <img src="../../assets/images/iconos/inicio-icono.png" alt="" class="icono-nav"> Inicio
+            </a>
+            <a href="../help/ayuda.html">
+                <img src="../../assets/images/iconos/ayuda-icono.png" alt="" class="icono-nav"> Ayuda
+            </a>
+            <a href="detalle-miembro.html" aria-current="page">
+                <img src="../../assets/images/iconos/miembros-icono.png" alt="" class="icono-nav"> Miembros
+            </a>
+            <a href="../auth/login.html" class="btn-login">Iniciar Sesión</a>
+        </nav>
+    </header>
+
+    <main id="contenido-principal" class="pagina-miembro" tabindex="-1">
+        <!-- Ruta de navegación -->
+        <nav aria-label="Ruta de navegación" class="ruta-miembro">
+            <ol class="breadcrumbs">
+                <li><a href="../../index.html">WEB</a></li>
+                <li>Organización</li>
+                <li><a href="#">Miembros</a></li>
+                <li aria-current="page">Jesús Andrés Sandoval Bringas</li>
+            </ol>
+            <a href="../../index.html" class="btn-volver">← Volver</a>
+        </nav>
+
+        <!-- Contenido en 2 columnas -->
+        <div class="miembro-grid">
+            <!-- Columna izquierda -->
+            <div class="miembro-principal">
+                <!-- Tarjeta de perfil -->
+                <section class="tarjeta-miembro perfil-header" aria-labelledby="nombre-miembro">
+                    <div class="avatar-perfil" aria-hidden="true">
+                        <!-- Si tienes la foto, reemplaza este span por: <img src="../../assets/images/miembros/andres-sandoval.jpg" alt="Fotografía de Jesús Andrés Sandoval Bringas"> -->
+                        <span>JA</span>
+                    </div>
+                    <div class="perfil-info">
+                        <h1 id="nombre-miembro">Jesús Andrés Sandoval Bringas</h1>
+                        <p class="perfil-cargo">Jefe de departamento</p>
+                        <p class="perfil-area">Investigación e Innovación</p>
+                        <span class="badge-organizacion">Organización universitaria</span>
+                    </div>
+                </section>
+
+                <!-- Biografía / Trayectoria -->
+                <section class="tarjeta-miembro" aria-labelledby="titulo-biografia">
+                    <h2 id="titulo-biografia">Biografía / Trayectoria</h2>
+                    <p>
+                        Jefe del Departamento Académico de Sistemas Computacionales de la Universidad Autónoma de Baja California Sur. Con el grado de Doctor, es fundador y responsable de la Red Internacional de Tecnologías Inclusivas e Innovación Educativa. Durante más de dos décadas ha investigado en áreas de Objetos de Aprendizaje y Procesos de Desarrollo de Software, Tecnología Inclusiva y Accesible, Desarrollo para entornos m-Learning.
+                    </p>
+                </section>
+
+                <!-- Objetivos e Intereses -->
+                <section class="tarjeta-miembro" aria-labelledby="titulo-objetivos">
+                    <h2 id="titulo-objetivos">Objetivos e Intereses</h2>
+                    <p>
+                        Reducir barreras de acceso a los servicios universitarios e incorporar la voz de las personas en cada etapa del diseño, con evidencia y colaboración interdisciplinaria.
+                    </p>
+                    <ul class="lista-intereses" aria-label="Áreas de interés">
+                        <li>Accesibilidad</li>
+                        <li>UX Research</li>
+                        <li>Diseño inclusivo</li>
+                        <li>Innovación educativa</li>
+                    </ul>
+                </section>
+
+                <!-- Proyectos en los que participa -->
+                <section class="tarjeta-miembro" aria-labelledby="titulo-proyectos-miembro">
+                    <div class="cabecera-tarjeta">
+                        <h2 id="titulo-proyectos-miembro">Proyectos en los que participa</h2>
+                        <span class="contador-activos">1 proyecto activo</span>
+                    </div>
+
+                    <article class="item-proyecto-miembro">
+                        <div class="icono-carpeta" aria-hidden="true">📁</div>
+                        <div class="info-proyecto-miembro">
+                            <div class="titulo-estado-proyecto">
+                                <h3>Campus sin barreras</h3>
+                                <span class="badge-desarrollo">• En desarrollo</span>
+                            </div>
+                            <p class="desc-proyecto">Mejora de rutas accesibles y servicios digitales para toda la comunidad.</p>
+                            <p class="meta-proyecto">Coordinación de investigación · Equipo interdisciplinario de 6 miembros</p>
+                        </div>
+                        <a href="../projects/detalle-proyecto.html" class="enlace-ver-proyecto">Ver proyecto ↗</a>
+                    </article>
+                </section>
+            </div>
+
+            <!-- Columna derecha (Sidebar) -->
+            <aside class="miembro-sidebar">
+                <!-- Tarjeta Conecta -->
+                <section class="tarjeta-miembro" aria-labelledby="titulo-conecta">
+                    <h2 id="titulo-conecta">Conecta con Andrés</h2>
+                    <p class="texto-conecta">Comparte una propuesta o consulta sobre investigación y accesibilidad.</p>
+                    <a href="mailto:andres.sandoval@uabcs.mx" class="btn-contactar">✉ Contactar miembro</a>
+                </section>
+
+                <!-- Información de contacto y Colaboradores -->
+                <section class="tarjeta-miembro" aria-labelledby="titulo-contacto">
+                    <h2 id="titulo-contacto">Información de contacto</h2>
+
+                    <ul class="lista-contacto">
+                        <li>
+                            <span class="icono-dato" aria-hidden="true">🏛</span>
+                            <div>
+                                <span class="dato-label">Organización de origen</span>
+                                <strong>Universidad Autónoma de Baja California Sur</strong>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="icono-dato" aria-hidden="true">💼</span>
+                            <div>
+                                <span class="dato-label">Departamento</span>
+                                <strong>Investigación e Innovación</strong>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="icono-dato" aria-hidden="true">✉</span>
+                            <div>
+                                <span class="dato-label">Correo institucional</span>
+                                <a href="mailto:andres.sandoval@uabcs.mx" class="correo-enlace">andres.sandoval@uabcs.mx</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="icono-dato" aria-hidden="true">📍</span>
+                            <div>
+                                <span class="dato-label">Ubicación institucional</span>
+                                <strong>Departamento de sistemas computacionales.</strong>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="icono-dato" aria-hidden="true">🕒</span>
+                            <div>
+                                <span class="dato-label">Atención institucional</span>
+                                <strong>Lun–vie · 09:00–17:00 · Ext. 204</strong>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <hr class="divisor-sidebar">
+
+                    <h3 class="subtitulo-colaboradores">Colaboradores frecuentes</h3>
+                    <ul class="lista-colaboradores">
+                        <li>
+                            <a href="#" class="colaborador-link">
+                                <span class="avatar-colab" aria-hidden="true">DR</span>
+                                <div class="colab-info">
+                                    <strong>Francisco Javier Álvarez Rodríguez</strong>
+                                    <span>Docente e investigador</span>
+                                </div>
+                                <span class="flecha-colab" aria-hidden="true">›</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="colaborador-link">
+                                <span class="avatar-colab" aria-hidden="true">AL</span>
+                                <div class="colab-info">
+                                    <strong>Charito Távara Sabalú</strong>
+                                    <span>Diseñadora de experiencia</span>
+                                </div>
+                                <span class="flecha-colab" aria-hidden="true">›</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="colaborador-link">
+                                <span class="avatar-colab" aria-hidden="true">CM</span>
+                                <div class="colab-info">
+                                    <strong>Yolanda Camacho González</strong>
+                                    <span>Desarrollador de software</span>
+                                </div>
+                                <span class="flecha-colab" aria-hidden="true">›</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+
+        <!-- Botón y modal de accesibilidad -->
+        <button type="button" class="boton-accesibilidad" aria-label="Abrir opciones de accesibilidad" aria-expanded="false" aria-controls="menu-accesibilidad">
+            <img src="../../assets/images/iconos/icono-accesibilidad.png" alt="">
+        </button>
+
+        <div id="menu-accesibilidad" class="modal-accesibilidad-overlay" hidden>
+            <div class="modal-accesibilidad" role="dialog" aria-modal="true" aria-labelledby="titulo-accesibilidad" tabindex="-1">
+                <header class="modal-header">
+                    <div class="modal-header-info">
+                        <img src="../../assets/images/iconos/icono-accesibilidad.png" alt="" class="modal-icono">
+                        <div>
+                            <h2 id="titulo-accesibilidad">Accesibilidad</h2>
+                            <p>Ajustes visuales y de lectura para el portal universitario</p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-cerrar-modal" aria-label="Cerrar opciones de accesibilidad">✕</button>
+                </header>
+                <div class="modal-body">
+                    <section class="accesibilidad-grupo">
+                        <div class="grupo-encabezado">
+                            <img src="../../assets/images/iconos/tamtexto-icono.png" alt="" class="icono-seccion">
+                            <h3 class="grupo-titulo">Tamaño del texto</h3>
+                            <span class="badge-predeterminado">100% (Predeterminado)</span>
+                        </div>
+                        <div class="botones-tamano" role="group" aria-label="Tamaño del texto">
+                            <button type="button" class="btn-tamano" data-escala="0.9" aria-pressed="false">A -</button>
+                            <button type="button" class="btn-tamano activo" data-escala="1" aria-pressed="true">A •</button>
+                            <button type="button" class="btn-tamano" data-escala="1.25" aria-pressed="false">A +</button>
+                        </div>
+                    </section>
+                    <section class="accesibilidad-grupo">
+                        <div class="grupo-encabezado">
+                            <img src="../../assets/images/iconos/tema-icono.png" alt="" class="icono-seccion">
+                            <h3 class="grupo-titulo">Modo de visualización</h3>
+                        </div>
+                        <div class="grid-modos" role="radiogroup" aria-label="Modo de visualización">
+                            <button type="button" role="radio" data-tema="estandar" aria-checked="true" class="modo-card activo">
+                                <span class="radio-circulo"></span><span class="modo-texto">Estándar</span>
+                            </button>
+                            <button type="button" role="radio" data-tema="contraste-claro" aria-checked="false" class="modo-card">
+                                <span class="radio-circulo"></span><span class="modo-texto">Contraste claro</span>
+                            </button>
+                            <button type="button" role="radio" data-tema="contraste-oscuro" aria-checked="false" class="modo-card">
+                                <span class="radio-circulo"></span><span class="modo-texto">Contraste oscuro</span>
+                            </button>
+                            <button type="button" role="radio" data-tema="monocromatico" aria-checked="false" class="modo-card">
+                                <span class="radio-circulo"></span><span class="modo-texto">Monocromático</span>
+                            </button>
+                        </div>
+                    </section>
+                    <div class="accesibilidad-opciones">
+                        <label class="opcion-checkbox">
+                            <div class="opcion-info">
+                                <img src="../../assets/images/iconos/icono-subrayar.png" alt="" class="icono-seccion">
+                                <span>Subrayar todos los enlaces</span>
+                            </div>
+                            <input type="checkbox" data-preferencia="subrayar-enlaces">
+                        </label>
+                        <label class="opcion-checkbox">
+                            <div class="opcion-info">
+                                <img src="../../assets/images/iconos/icono-libro.png" alt="" class="icono-seccion">
+                                <span>Tipografía para lectura fácil</span>
+                            </div>
+                            <input type="checkbox" data-preferencia="tipografia-legible">
+                        </label>
+                    </div>
+                    <a href="../accessibility/accesibilidad.html" class="enlace-mas-opciones">
+                        <div class="mas-opciones-texto">
+                            <strong>Más opciones de accesibilidad</strong>
+                            <span>Configura todas las opciones disponibles del sistema</span>
+                        </div>
+                        <span class="flecha">›</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="footer-barra-superior">
+            <nav class="navegacion-footer" aria-label="Navegación del pie de página">
+                <a href="">Mapa web</a>
+                <a href="">Contacto</a>
+                <a href="">Política de privacidad</a>
+                <a href="">¿Qué es GIDTIITEC?</a>
+            </nav>
+        </div>
+        <div class="footer-contenido-principal">
+            <div class="footer-identidad">
+                <img src="../../assets/images/logos/gidtiitec-logo2.png" alt="Logo de GIDTIITEC">
+                <p>© GIDTIITEC - 2026</p>
+            </div>
+            <div class="footer-redes">
+                <p>Síguenos</p>
+                <div id="redes">
+                    <a href="https://www.facebook.com/gidtiitec" aria-label="Visitar facebook de GIDTIITEC" target="_blank" rel="noopener noreferrer">
+                        <img src="../../assets/images/logos/facebook-logo.png" alt="Logo de facebook">
+                    </a>
+                    <a href="" aria-label="Visitar instagram de GIDTIITEC" target="_blank" rel="noopener noreferrer">
+                        <img src="../../assets/images/logos/instagram-logo.png" alt="Logo de instagram">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/accessibility.js" defer></script>
+</body>
+</html>
